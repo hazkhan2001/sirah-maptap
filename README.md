@@ -10,11 +10,24 @@ player worldwide gets the same 3 until midnight America/New_York.
 
 ## Run it
 
-```
+```powershell
 python -m venv .venv
-.venv\Scripts\activate          # Windows   (mac/linux: source .venv/bin/activate)
+.\.venv\Scripts\Activate.ps1     # PowerShell
 pip install -r requirements.txt
 python app.py
+```
+
+`Activate.ps1` is the PowerShell script; the extensionless `activate` is the
+cmd.exe one and does nothing in PowerShell. On mac/linux it is
+`source .venv/bin/activate`.
+
+If `python app.py` reports `ModuleNotFoundError: No module named 'flask'`,
+the environment is not active and bare `python` is resolving to system
+Python. Either activate as above, or skip activation and name the
+interpreter directly, which always works:
+
+```powershell
+.\.venv\Scripts\python.exe app.py
 ```
 
 Open http://127.0.0.1:5000
@@ -31,7 +44,10 @@ once after cloning.
 Pulls each location's lead image from Wikipedia plus the photographer and
 license from Wikimedia Commons, and writes them into `data/events.json`.
 
-```
+The same environment caveat applies: activate first, or call
+`.\.venv\Scripts\python.exe` instead of `python`.
+
+```powershell
 python fetch_images.py                    # fill in anything still missing
 python fetch_images.py --all              # re-fetch every location
 python fetch_images.py --only mecca badr  # just these ids

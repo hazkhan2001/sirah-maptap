@@ -73,6 +73,10 @@ const el = {
   backToMap: document.getElementById("back-to-map"),
   mobileBar: document.getElementById("mobile-bar"),
   mobileScore: document.getElementById("mobile-score"),
+  share: document.getElementById("share"),
+  mobileShare: document.getElementById("mobile-share"),
+  shareStatus: document.getElementById("share-status"),
+  shareText: document.getElementById("share-text"),
 };
 
 // One source of truth for "are we on a phone?", matching the CSS breakpoint.
@@ -220,6 +224,7 @@ function emphasizeRegion(feature) {
 }
 
 function showReveal(reveal) {
+  latestReveal = reveal;   // the share buttons read this
   el.panel.hidden = true;
   document.body.classList.add("is-revealed"); // swaps the reticle cursor for a grab hand
   el.revealDay.textContent = reveal.day;
@@ -401,5 +406,105 @@ async function start() {
     el.hint.textContent = err.message;
   }
 }
+
+
+// ---------- sharing ----------
+//
+// Spoiler-free on purpose. Naming the locations would hand the day's answers
+// to whoever you send it to, which defeats the point of sharing a daily
+// puzzle - the same reason Wordle shares coloured squares rather than the
+// word. Bars and distances convey how you did without saying where anything is.
+
+let latestReveal = null;
+
+/**
+ * Ten cells, filled in proportion to the score, coloured by band.
+ *
+ * Emoji rather than box-drawing characters (▮▯) deliberately: chat apps
+ * render text in proportional fonts, where box characters drift out of
+ * alignment and the bars stop lining up. Emoji are fixed-width everywhere.
+ */
+function scoreBar(score) {
+  const filled = Math.round(score / 10);
+  const glyph = score >= 80 ? "🟩" : score >= 50 ? "🟨" : "🟧";
+  return glyph.repeat(filled) + "⬜".repeat(10 - filled);
+}
+
+function formatDay(iso) {
+  // Parse as UTC noon rather than letting the browser read "2026-09-16" as
+  // midnight UTC, which renders as the previous day for anyone west of it.
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(Date.UTC(y, m - 1, d, 12)).toLocaleDateString(undefined, {
+    day: "numeric", month: "short", year: "numeric",
+  });
+}
+
+function buildShareText(reveal) {
+  const lines = [
+    `Sirah MapTap · ${formatDay(reveal.day)}`,
+    `${reveal.daily_score}/100`,
+    "",
+  ];
+  reveal.results.forEach((r) => {
+    lines.push(`${scoreBar(r.score)}  ${r.score} · ${r.distance_km} km`);
+  });
+  lines.push("", reveal.share_url || window.location.origin);
+  return lines.join("\n");
+}
+
+function setShareStatus(message) {
+  el.shareStatus.textContent = message;
+  el.shareStatus.hidden = !message;
+}
+
+/**
+ * Try the best available mechanism, degrading rather than failing.
+ *
+ * navigator.share gives phones the native sheet. navigator.clipboard needs a
+ * SECURE CONTEXT - https or localhost - so it is simply absent when the game
+ * is reached over a plain LAN IP like 192.168.1.159:5000, which is exactly
+ * how this gets tested on a phone. Hence the visible textarea at the end:
+ * the text is always obtainable even when neither API exists.
+ */
+async function shareScore() {
+  if (!latestReveal) return;
+  const text = buildShareText(latestReveal);
+
+  if (navigator.share) {
+    try {
+      await navigator.share({ text });
+      setShareStatus("Shared.");
+      return;
+    } catch (err) {
+      // The user dismissing the share sheet is not an error worth reporting.
+      if (err && err.name === "AbortError") return;
+    }
+  }
+
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setShareStatus("Copied to clipboard.");
+      el.shareText.hidden = true;
+      return;
+    } catch (err) {
+      /* fall through to the manual path */
+    }
+  }
+
+  el.shareText.value = text;
+  el.shareText.hidden = false;
+  el.shareText.focus();
+  el.shareText.select();
+  setShareStatus("Copy the text above (Ctrl+C).");
+}
+
+el.share.addEventListener("click", shareScore);
+el.mobileShare.addEventListener("click", () => {
+  // On a phone the player is looking at the map, not the drawer, so open it
+  // so the fallback textarea is somewhere they can actually see.
+  if (el.reveal.hidden) el.reveal.hidden = false;
+  shareScore();
+});
 
 start();

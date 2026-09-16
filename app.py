@@ -36,6 +36,13 @@ EVENTS_FILE = BASE_DIR / "data" / "events.json"
 REGIONS_FILE = BASE_DIR / "data" / "hijaz_provinces.geojson"
 
 ROUNDS_PER_DAY = 3
+
+# The address that goes into a shared score. Falls back to whatever host
+# served the page, so sharing works over a LAN IP or a Cloudflare tunnel
+# today without configuration. Set SIRAH_PUBLIC_URL once this is hosted,
+# otherwise people playing on localhost will share a link to 127.0.0.1,
+# which means "your own machine" to whoever receives it.
+PUBLIC_URL = os.environ.get("SIRAH_PUBLIC_URL")
 GAME_TIMEZONE = ZoneInfo("America/New_York")
 EARTH_RADIUS_KM = 6371.0
 
@@ -45,6 +52,17 @@ app = Flask(__name__)
 # We read it from an environment variable; the fallback is ONLY for local dev.
 # Never ship the fallback value to a real server.
 app.secret_key = os.environ.get("SIRAH_SECRET_KEY", "dev-only-change-me")
+
+# Pick up edits to templates/ without restarting the server.
+#
+# Flask reads files in static/ from disk on every request, but compiles Jinja
+# templates once and caches them in memory. With debug=False that cache never
+# checks the file again, so editing index.html appears to do nothing while
+# editing game.js takes effect immediately. That asymmetry is genuinely
+# confusing to debug: the browser ends up running new JS against an old page
+# shell, and the error it throws points at the new file rather than the stale
+# one. Costs one stat() per template per request, which is nothing at this size.
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
 # --------------------------------------------------------------------------
@@ -247,7 +265,15 @@ def build_reveal(state: dict) -> dict:
         })
 
     daily_score = round(sum(r["score"] for r in results) / len(results))
-    return {"day": state["day"], "results": results, "daily_score": daily_score}
+    return {
+        "day": state["day"],
+        "results": results,
+        "daily_score": daily_score,
+        # request.host_url is whatever the browser used to reach us, so a
+        # player on the tunnel shares the tunnel URL and a player on the LAN
+        # shares the LAN one, with no per-environment config.
+        "share_url": (PUBLIC_URL or request.host_url).rstrip("/"),
+    }
 
 
 @app.route("/api/regions")

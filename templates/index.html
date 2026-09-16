@@ -48,6 +48,12 @@
     <div id="results"></div>
     <footer class="reveal-foot">
       <p>Come back tomorrow for three new locations.</p>
+      <button id="share" class="share-btn" type="button">Share your score</button>
+      <!-- aria-live so a screen reader announces "Copied" without moving focus -->
+      <p id="share-status" class="share-status" role="status" aria-live="polite" hidden></p>
+      <!-- Manual fallback: the clipboard API is unavailable outside a secure
+           context, which includes reaching this over a plain LAN IP. -->
+      <textarea id="share-text" class="share-text" readonly hidden rows="8"></textarea>
       <button id="dev-reset" class="ghost" type="button">Play today's round again</button>
     </footer>
   </aside>
@@ -56,6 +62,7 @@
   <div id="mobile-bar" class="mobile-bar" hidden>
     <span class="mobile-bar-score"><strong id="mobile-score">0</strong>/100</span>
     <span class="mobile-bar-hint">Tap a location to read about it</span>
+    <button id="mobile-share" class="mobile-share-btn" type="button">Share</button>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
