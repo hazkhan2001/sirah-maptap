@@ -1,0 +1,624 @@
+/* ---------- tokens ---------- */
+:root {
+  --green: #14453a;
+  /* panel background, the green of the Dome */
+  --green-deep: #0d2f28;
+  --ivory: #f3ebd9;
+  /* text on green */
+  --ivory-dim: #cfc4ab;
+  --sand: #c8a85a;
+  /* accent: correct pin, score */
+  --clay: #b8543f;
+  /* guess pin and distance line */
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--serif);
+  color: var(--ivory);
+  background: var(--green-deep);
+}
+
+/* The map is the page. Fixed to the viewport, behind everything. */
+#map {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ---------- prompt panel (top center) ---------- */
+.panel {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  /* Leaflet's own panes go up to ~700 */
+  width: min(38rem, calc(100vw - 2rem));
+  padding: 1.1rem 2rem 1.5rem;
+  text-align: center;
+  background: var(--green);
+  border: 1px solid rgba(200, 168, 90, 0.45);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.55);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--sand);
+}
+
+.round {
+  margin: 0.1rem 0 1rem;
+  font-size: 1.05rem;
+  color: var(--ivory-dim);
+}
+
+.prompt-lead {
+  margin: 0;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--ivory-dim);
+}
+
+.prompt {
+  margin: 0.1rem 0 0.9rem;
+  font-size: 2.9rem;
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+.hint {
+  margin: 0 0 1.1rem;
+  font-size: 1.1rem;
+  color: var(--ivory-dim);
+  min-height: 1.4em;
+}
+
+.confirm {
+  width: min(22rem, 100%);
+  padding: 0.95rem 1.5rem;
+  font: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
+  color: var(--green-deep);
+  background: var(--sand);
+  border: 0;
+  cursor: pointer;
+}
+
+.confirm:disabled {
+  background: rgba(200, 168, 90, 0.22);
+  color: var(--ivory-dim);
+  cursor: not-allowed;
+}
+
+.confirm:focus-visible {
+  outline: 2px solid var(--ivory);
+  outline-offset: 3px;
+}
+
+/* ---------- reveal drawer ---------- */
+.reveal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: min(32rem, 100vw);
+  overflow-y: auto;
+  background: var(--green);
+  border-left: 1px solid rgba(200, 168, 90, 0.35);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.45);
+}
+
+.reveal[hidden] {
+  display: none;
+}
+
+.reveal-head {
+  padding: 1.75rem 1.75rem 1.4rem;
+  border-bottom: 1px solid rgba(243, 235, 217, 0.15);
+}
+
+.reveal-day {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--ivory-dim);
+}
+
+.reveal-score {
+  margin: 0.25rem 0 0;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--sand);
+}
+
+.reveal-score .of {
+  font-size: 1.6rem;
+  color: var(--ivory-dim);
+  margin-left: 0.15rem;
+}
+
+.reveal-sub {
+  margin: 0.25rem 0 0;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ivory-dim);
+}
+
+/* Legend: reuses the actual pin classes so it can never drift out of
+   sync with what's drawn on the map. */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ivory-dim);
+}
+
+.legend-key {
+  flex: none;
+  transform: scale(0.75);
+  margin-right: 0.15rem;
+}
+
+.legend-key.pin-guess {
+  margin-left: 0.9rem;
+}
+
+/* Each result is a section separated by a rule, not a floating card. */
+.result {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid rgba(243, 235, 217, 0.15);
+  cursor: pointer;
+}
+
+.result:hover {
+  background: rgba(243, 235, 217, 0.05);
+}
+
+.result-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.result-name {
+  margin: 0;
+  font-size: 1.65rem;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.result-score {
+  font-size: 2rem;
+  color: var(--sand);
+  white-space: nowrap;
+}
+
+.result-meta {
+  margin: 0.3rem 0 0.9rem;
+  font-size: 1.05rem;
+  color: var(--ivory-dim);
+}
+
+/* Photograph of the location. The caption carries the photographer and
+   license, which most Commons images require us to display. */
+.result-figure {
+  margin: 0 0 1rem;
+}
+
+.result-img {
+  display: block;
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+  /* fill the box without distorting the photo */
+  border: 1px solid rgba(200, 168, 90, 0.4);
+  background: var(--green-deep);
+}
+
+.result-caption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: var(--ivory-dim);
+}
+
+/* The write-up is the actual point of the game, so it gets real reading
+   type: larger size and generous line-height, which serif text needs. */
+.result-desc {
+  margin: 0 0 1rem;
+  line-height: 1.62;
+  font-size: 1.22rem;
+}
+
+.result-source {
+  margin: 0 0 0.6rem;
+  font-size: 0.98rem;
+  color: var(--ivory-dim);
+  line-height: 1.45;
+}
+
+.result a {
+  color: var(--sand);
+  font-size: 1.05rem;
+}
+
+.reveal-foot {
+  padding: 1.5rem 1.75rem 2.5rem;
+  font-size: 1.1rem;
+  color: var(--ivory-dim);
+}
+
+.ghost {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--ivory-dim);
+  background: transparent;
+  border: 1px solid rgba(243, 235, 217, 0.3);
+  cursor: pointer;
+}
+
+/* ---------- cursor ---------- */
+/* While guessing, the cursor is a gold reticle (drawn inline as an SVG data
+   URI, so there's no image file to ship). The 16 16 at the end is the
+   "hotspot" — which pixel of the image counts as the actual click point.
+   Getting that wrong makes taps land slightly off from where they look. */
+.leaflet-container,
+.leaflet-container .leaflet-interactive {
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230d2f28%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%226.5%22%2F%3E%3Cpath%20d%3D%22M16%202v5M16%2025v5M2%2016h5M25%2016h5%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f0d798%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%226.5%22%2F%3E%3Cpath%20d%3D%22M16%202v5M16%2025v5M2%2016h5M25%2016h5%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%221.6%22%20fill%3D%22%23f0d798%22%2F%3E%3C%2Fsvg%3E") 16 16,
+    crosshair;
+}
+
+/* Mid-drag, show a grab hand: you're moving the map, not aiming. */
+.leaflet-container.leaflet-drag-target,
+.leaflet-dragging .leaflet-container {
+  cursor: grabbing;
+}
+
+/* Once the reveal is up there's nothing left to aim at. */
+body.is-revealed .leaflet-container {
+  cursor: grab;
+}
+
+body.is-revealed .leaflet-marker-icon,
+body.is-revealed .leaflet-container .leaflet-interactive {
+  cursor: pointer;
+}
+
+/* ---------- recenter control ---------- */
+.recenter-btn {
+  display: block;
+  margin-bottom: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ivory);
+  background: var(--green);
+  border: 1px solid rgba(200, 168, 90, 0.5);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.recenter-btn:hover {
+  background: var(--green-deep);
+}
+
+.recenter-btn:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 2px;
+}
+
+/* ---------- map markers ---------- */
+/* The two pins are deliberately different SHAPES, not just different
+   colors — color alone fails over busy satellite imagery and for
+   colorblind players. The answer is a solid gold disc with a halo ring;
+   the guess is a hollow clay ring with a crosshair. */
+
+.pin-answer {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--sand);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 4px rgba(200, 168, 90, 0.45), 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.pin-guess {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid var(--clay);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+
+/* crosshair tick marks, so it reads as "where you aimed" */
+.pin-guess::before,
+.pin-guess::after {
+  content: "";
+  position: absolute;
+  background: var(--clay);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.pin-guess::before {
+  left: 50%;
+  top: -7px;
+  width: 2px;
+  height: 5px;
+  margin-left: -1px;
+}
+
+.pin-guess::after {
+  top: 50%;
+  left: -7px;
+  height: 2px;
+  width: 5px;
+  margin-top: -1px;
+}
+
+/* Permanent labels riding under each pin */
+.pin-label {
+  background: rgba(13, 47, 40, 0.94);
+  border: 1px solid rgba(200, 168, 90, 0.55);
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  padding: 3px 11px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.pin-label.is-answer {
+  border-color: var(--sand);
+  color: var(--sand);
+  font-size: 1.2rem;
+}
+
+.pin-label.is-guess {
+  border-color: var(--clay);
+  color: #f0b3a4;
+}
+
+.leaflet-tooltip.pin-label::before {
+  display: none;
+}
+
+.distance-label {
+  background: var(--green-deep);
+  color: var(--ivory);
+  border: 1px solid var(--sand);
+  padding: 4px 12px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.leaflet-tooltip.distance-label::before {
+  display: none;
+}
+
+/* Leaflet popups (pin click / result click) themed to match the panel. */
+.leaflet-popup-content-wrapper {
+  background: var(--green);
+  color: var(--ivory);
+  border: 1px solid rgba(200, 168, 90, 0.5);
+  border-radius: 0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+}
+
+.leaflet-popup-content {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 0.85rem 1.1rem;
+}
+
+.leaflet-popup-content strong {
+  font-size: 1.3rem;
+  color: var(--sand);
+}
+
+.leaflet-popup-tip {
+  background: var(--green);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--ivory-dim);
+  font-size: 1.3rem;
+  padding: 6px 8px 0 0;
+}
+
+/* ---------- phone-only: back button and summary bar ---------- */
+/* Both are hidden on desktop and revealed inside the media query below. */
+.back-btn,
+.mobile-bar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+
+  /* Prompt panel: small, at the top, out of the way of the map. */
+  .panel {
+    top: 0.6rem;
+    bottom: auto;
+    width: calc(100vw - 1rem);
+    padding: 0.55rem 0.9rem 0.75rem;
+  }
+
+  .title {
+    display: none;
+  }
+
+  /* the tab title already says it */
+  .round {
+    margin: 0 0 0.25rem;
+    font-size: 0.85rem;
+  }
+
+  .prompt-lead {
+    font-size: 0.9rem;
+  }
+
+  .prompt {
+    font-size: 1.35rem;
+    margin: 0 0 0.4rem;
+    line-height: 1.15;
+  }
+
+  .hint {
+    font-size: 0.85rem;
+    margin: 0 0 0.5rem;
+    min-height: 0;
+  }
+
+  .confirm {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Summary bar sitting over the map after the reveal. */
+  .mobile-bar {
+    display: flex;
+    position: fixed;
+    top: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    align-items: baseline;
+    gap: 0.6rem;
+    width: calc(100vw - 1rem);
+    justify-content: center;
+    padding: 0.5rem 0.9rem;
+    background: var(--green);
+    border: 1px solid rgba(200, 168, 90, 0.45);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+  }
+
+  .mobile-bar[hidden] {
+    display: none;
+  }
+
+  /* [hidden] must beat display:flex */
+  .mobile-bar-score {
+    font-size: 1.3rem;
+    color: var(--ivory-dim);
+  }
+
+  .mobile-bar-score strong {
+    font-size: 1.8rem;
+    color: var(--sand);
+    font-weight: 500;
+  }
+
+  .mobile-bar-hint {
+    font-size: 0.92rem;
+    color: var(--ivory-dim);
+  }
+
+  /* The drawer becomes a full-screen reader. */
+  .reveal {
+    width: 100vw;
+    border-left: 0;
+  }
+
+  .back-btn {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--ivory);
+    background: transparent;
+    border: 1px solid rgba(200, 168, 90, 0.55);
+    cursor: pointer;
+  }
+
+  /* In single-location mode, show only the tapped round and drop the
+     day/score header, which belongs to the map view instead. The footer
+     STAYS: on a phone it holds the only way to replay. */
+  .reveal.is-single .reveal-day,
+  .reveal.is-single .reveal-score,
+  .reveal.is-single .reveal-sub,
+  .reveal.is-single .legend {
+    display: none;
+  }
+
+  .reveal.is-single .reveal-head {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .reveal.is-single .result {
+    display: none;
+  }
+
+  .reveal.is-single .result.is-open {
+    display: block;
+  }
+
+  .reveal.is-single .result {
+    cursor: default;
+    border-bottom: 0;
+  }
+
+  .reveal.is-single .reveal-foot {
+    border-top: 1px solid rgba(243, 235, 217, 0.15);
+    padding-top: 1.25rem;
+  }
+
+  /* The replay button is a real control on phones, not a dev afterthought. */
+  .ghost {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.05rem;
+    color: var(--sand);
+    border-color: rgba(200, 168, 90, 0.55);
+  }
+
+  .reveal-head {
+    padding: 1.1rem 1.25rem 1rem;
+  }
+
+  .result {
+    padding: 0.5rem 1.25rem 2rem;
+  }
+
+  .result-name {
+    font-size: 1.5rem;
+  }
+
+  .result-desc {
+    font-size: 1.15rem;
+  }
+
+  .result-img {
+    height: 13rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .confirm {
+    transition: background 120ms ease;
+  }
+}

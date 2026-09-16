@@ -1,0 +1,19 @@
+# Python virtual environment — recreate with: python -m venv .venv
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Fetched data, not committed (see README for the fetch command)
+data/hijaz_provinces.geojson
+
+# Original scaffold download, superseded by this repo
+sirah-maptap.zip
+
+# Local environment / secrets
+.env
+
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store
