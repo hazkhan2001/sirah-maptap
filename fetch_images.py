@@ -137,6 +137,37 @@ def resolve_image(event: dict) -> tuple[str | None, str]:
     return None, "not found"
 
 
+def commons_filename(image_url: str) -> str:
+    """
+    Turn a Wikimedia image URL into the Commons 'File:' name.
+
+    Two traps here, both of which silently produced junk credits before:
+
+    1. Wikipedia's REST API now appends tracking parameters:
+           .../Masjid_Quba_Mosque.jpg?utm_source=...&utm_campaign=api
+       Taking the last path segment therefore yields a "filename" with a
+       query string glued on, and File:Something.jpg?utm_source=... does
+       not exist. The API answers, finds nothing, and we fall through to
+       the generic "Wikimedia Commons" default - which is not valid
+       attribution for a CC BY-SA photo.
+
+    2. Thumbnail URLs nest the real name one level up:
+           .../thumb/a/af/Real_Name.jpg/640px-Real_Name.jpg
+       The last segment is the scaled rendition, not the Commons file.
+
+    Strip the query and fragment first, then step back one segment if the
+    path is a /thumb/ rendition.
+    """
+    clean = image_url.split("?", 1)[0].split("#", 1)[0]
+    parts = clean.split("/")
+    # A /thumb/ URL has the true filename as the second-to-last segment.
+    if "thumb" in parts and len(parts) >= 2:
+        name = parts[-2]
+    else:
+        name = parts[-1]
+    return urllib.parse.unquote(name)
+
+
 def image_credit(image_url: str) -> tuple[str, str]:
     """
     Look up who made the photo and under what license.
@@ -144,7 +175,7 @@ def image_credit(image_url: str) -> tuple[str, str]:
     The filename is the last segment of the image URL, percent-decoded
     (e.g. 'Jabal_al-Nour%2C_Mecca.jpg' -> 'Jabal_al-Nour, Mecca.jpg').
     """
-    filename = urllib.parse.unquote(image_url.rsplit("/", 1)[-1])
+    filename = commons_filename(image_url)
     query = urllib.parse.urlencode({
         "action": "query",
         "titles": f"File:{filename}",
@@ -162,8 +193,15 @@ def image_credit(image_url: str) -> tuple[str, str]:
     page = next(iter(pages.values()), {})
     meta = (page.get("imageinfo") or [{}])[0].get("extmetadata", {})
 
-    artist = meta.get("Artist", {}).get("value", "Wikimedia Commons")
-    license_name = meta.get("LicenseShortName", {}).get("value", "See Commons")
+    artist = meta.get("Artist", {}).get("value", "")
+    license_name = meta.get("LicenseShortName", {}).get("value", "")
+    if not artist or not license_name:
+        # Say so loudly. Most Commons images are CC BY-SA and legally require
+        # naming the photographer, so a generic placeholder is not a credit -
+        # it is a licence violation wearing a credit's clothes.
+        print(f"    WARNING: no Commons metadata for File:{filename}")
+        artist = artist or "Wikimedia Commons (credit unresolved)"
+        license_name = license_name or "See Commons (unresolved)"
 
     # Artist often arrives as HTML (a link tag). Strip tags crudely but safely:
     # we only ever display this as text, never as HTML.

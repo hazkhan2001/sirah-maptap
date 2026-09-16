@@ -209,9 +209,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Quba_Mosque",
     "coord_note": "Modern mosque on the traditional site, south of Medina. Confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Masjid_Quba_Mosque.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "qiblatayn",
@@ -224,9 +224,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Masjid_al-Qiblatayn",
     "coord_note": "Modern mosque on the traditional site. Confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Masjid_al-Qiblatain.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "khandaq",
@@ -239,9 +239,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Battle_of_the_Trench",
     "coord_note": "Pinned at Mount Sal' in northwest Medina. The trench itself ran for some distance across the northern approach, so this is a point standing in for a line.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Battle_of_Trench_627_CE.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Mount Sala Medina"
   },
   {
@@ -255,9 +255,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Jannat_al-Baqi",
     "coord_note": "Adjacent to the Prophet's Mosque. Confident. Sits close to the Medina pin, so both can appear in the same day's round.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Al-Baqi_Cemetery_2021.jpg/3840px-Al-Baqi_Cemetery_2021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "mina",
@@ -270,9 +270,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Mina,_Saudi_Arabia",
     "coord_note": "Valley centre near the Jamarat. Confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Mina_Overview.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "muzdalifah",
@@ -285,9 +285,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Muzdalifah",
     "coord_note": "Centre of the plain, between Arafat and Mina. Confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Fajr_in_Muzdalifah.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "jiranah",
@@ -300,9 +300,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Ji'ranah",
     "coord_note": "Approximate. Northeast of Mecca on the road toward Ta'if. Needs verification.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Edited_Great_Mosque_of_Mecca1_5-2019-ccsa4.0_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Ji'ranah mosque Mecca"
   },
   {
@@ -316,9 +316,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Dhu_al-Hulayfah",
     "coord_note": "Site of the modern Abyar 'Ali mosque. Confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Abiar_Ali.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Dhu al-Hulayfah mosque Medina"
   },
   {
@@ -332,9 +332,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Al-Aqsa_Mosque",
     "coord_note": "Al-Aqsa compound, Jerusalem. Confident on position. Far outside the Hijaz - see the scoring note in the README. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "beyond",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Jerusalem-2013-Temple_Mount-Al-Aqsa_Mosque_%28NE_exposure%29.jpg/3840px-Jerusalem-2013-Temple_Mount-Al-Aqsa_Mosque_%28NE_exposure%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "in_pool": false
   },
   {
@@ -348,9 +348,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Axum",
     "coord_note": "Pinned at Aksum, the kingdom's capital. The migrants' exact place of settlement is not fixed in the sources. Far outside the Hijaz.",
     "region": "beyond",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Aksum-107529.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "mutah",
@@ -363,9 +363,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Battle_of_Mu'tah",
     "coord_note": "Modern Mu'tah, Jordan, near Karak. Outside the Hijaz.",
     "region": "beyond",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Battle_of_Mu%27tah_-_Strategic_Map_%28629_AD%29.svg/960px-Battle_of_Mu%27tah_-_Strategic_Map_%28629_AD%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "dumat",
@@ -378,9 +378,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Dumat_al-Jandal",
     "coord_note": "Historic site at modern Al-Jawf, near Sakaka. Confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/The_old_city_of_Adummatu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "tayma",
@@ -393,9 +393,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Tayma",
     "coord_note": "Oasis town centre. Confident on the town. Its role is recorded briefly and in less detail than the battles.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Old_town_of_Tayma_2020.jpg/3840px-Old_town_of_Tayma_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "ayla",
@@ -408,9 +408,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Aqaba",
     "coord_note": "Ancient Ayla lies within modern Aqaba, Jordan. Outside the Hijaz.",
     "region": "beyond",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/AQABA_2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "jeddah",
@@ -423,9 +423,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Jeddah",
     "coord_note": "Modern city centre / historic Al-Balad. Confident on the port. The exact embarkation point for Abyssinia is not fixed; some reports name al-Shu'aybah instead. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AC%D8%AF%D8%A9_%D8%BA%D8%B1%D8%A8_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%282025%29_%28cropped%29.jpg/3840px-%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AC%D8%AF%D8%A9_%D8%BA%D8%B1%D8%A8_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%282025%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "in_pool": false
   },
   {
@@ -439,9 +439,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Yanbu",
     "coord_note": "Modern port city. The early expeditions ranged across this district rather than one fixed point, so the pin stands for a region.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Yanbu_Beach_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "juhfah",
@@ -454,9 +454,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Al-Juhfah",
     "coord_note": "Site near modern Rabigh. The old settlement is ruined and its exact position is debated. Approximate.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Rabigh_Power_Plant.jpg/3840px-Rabigh_Power_Plant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Rabigh Saudi Arabia"
   },
   {
@@ -470,9 +470,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Usfan",
     "coord_note": "Modern 'Usfan on the Mecca-Medina road. Reasonably confident.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Main_Street_in_Fairmont.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "abwa",
@@ -485,9 +485,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Al-Abwa'",
     "coord_note": "Approximate. The village lies between Mecca and Medina toward Rabigh; the sources place it by stages along the road rather than by fixed position. Needs verification.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/%D8%A7%D9%84%D8%B6%D8%B1%D9%8A%D8%AD_%D8%A7%D9%84%D8%A3%D9%8A%D9%85%D9%86_%D9%84%D8%B6%D8%B1%D9%8A%D8%AD_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF%D8%A9_%D8%A2%D9%85%D9%86%D8%A9_%D8%B9%D9%84%D9%8A%D9%87%D8%A7_%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Al-Abwa Saudi Arabia"
   },
   {
@@ -501,9 +501,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Fadak",
     "coord_note": "Commonly identified with modern al-Ha'it in Ha'il province. Approximate; needs verification.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Fadak_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Al-Ha'it Saudi Arabia"
   },
   {
@@ -517,9 +517,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Najran",
     "coord_note": "Modern Najran, far southern Saudi Arabia near the Yemeni border. Well outside the Hijaz.",
     "region": "beyond",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/%D9%82%D9%84%D8%B9%D8%A9_%D8%B1%D8%B9%D9%88%D9%85.jpg/3840px-%D9%82%D9%84%D8%B9%D8%A9_%D8%B1%D8%B9%D9%88%D9%85.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "bosra",
@@ -532,9 +532,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Bosra",
     "coord_note": "Ancient city in Daraa province, Syria. Outside the Hijaz. Note that the Bahira episode rests mainly on the sira literature and is weaker in the hadith collections.",
     "region": "beyond",
-    "image": null,
-    "image_credit": null,
-    "image_license": null
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Bosra_square.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons"
   },
   {
     "id": "nakhlah",
@@ -547,9 +547,9 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Nakhla_raid",
     "coord_note": "Approximate. Wadi Nakhlah lies east of Mecca toward Ta'if and the sources differ on the exact spot. Needs verification.",
     "region": "hijaz",
-    "image": null,
-    "image_credit": null,
-    "image_license": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Tihama_on_the_Red_Sea_near_Khaukha%2C_Yemen.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Wikimedia Commons",
+    "image_license": "See Commons",
     "image_search": "Wadi Nakhlah Saudi Arabia"
   }
 ]

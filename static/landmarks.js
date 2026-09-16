@@ -29,11 +29,11 @@
 // location is the active answer would leak more than showing it does - the
 // missing label would itself give the answer away.
 const REFERENCE_LANDMARKS = [
-  { name: "Mecca",     lat: 21.4225, lng: 39.8262, minZoom: 4 },
-  { name: "Medina",    lat: 24.4672, lng: 39.6111, minZoom: 4 },
-  { name: "Jeddah",    lat: 21.4858, lng: 39.1925, minZoom: 6 },
+  { name: "Mecca", lat: 21.4225, lng: 39.8262, minZoom: 4 },
+  { name: "Medina", lat: 24.4672, lng: 39.6111, minZoom: 4 },
+  { name: "Jeddah", lat: 21.4858, lng: 39.1925, minZoom: 6 },
   { name: "Jerusalem", lat: 31.7683, lng: 35.2137, minZoom: 4 },
-  { name: "Damascus",  lat: 33.5138, lng: 36.2765, minZoom: 4 },
+  { name: "Damascus", lat: 33.5138, lng: 36.2765, minZoom: 4 },
 ];
 
 /**
