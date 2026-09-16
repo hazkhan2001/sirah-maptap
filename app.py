@@ -63,6 +63,17 @@ EVENTS = load_events()
 # A dict lets us look up an event by id in O(1) instead of scanning the list.
 EVENTS_BY_ID = {event["id"]: event for event in EVENTS}
 
+# Locations drawn as permanent reference labels on the map (Mecca, Medina,
+# Jeddah, al-Aqsa) are excluded from the answer pool: a place whose name is
+# always printed on the map cannot be a fair round. Hiding the label while
+# its location was the answer would leak more than showing it, since the
+# missing label would itself give the answer away.
+#
+# They stay in EVENTS rather than being deleted, so their write-ups survive
+# and stay reachable by id. Flipping one back into rotation is a one-word
+# edit in events.json.
+POOL = [event for event in EVENTS if event.get("in_pool", True)]
+
 
 # --------------------------------------------------------------------------
 # Daily rotation
@@ -87,7 +98,7 @@ def daily_events(day: str) -> list[dict]:
     deterministic without us maintaining a calendar.
     """
     rng = random.Random(day)
-    return rng.sample(EVENTS, ROUNDS_PER_DAY)
+    return rng.sample(POOL, ROUNDS_PER_DAY)
 
 
 # --------------------------------------------------------------------------

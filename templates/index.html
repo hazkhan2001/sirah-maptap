@@ -63,6 +63,9 @@
        coordinate inside this province shape?) rather than hand-matching
        province names ourselves. -->
   <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+  <!-- Reference city labels. Must load BEFORE game.js, which calls
+       addReferenceLandmarks() during setup. -->
+  <script src="{{ url_for('static', filename='landmarks.js') }}"></script>
   <script src="{{ url_for('static', filename='game.js') }}"></script>
 </body>
 

@@ -8,11 +8,12 @@
     "description": "The birthplace of the Prophet Muhammad (peace be upon him) around the Year of the Elephant, and the city where he spent the first fifty-three years of his life. Here he received the earliest revelations, preached in secret and then openly, endured the boycott of Banu Hashim, and lost both Khadijah and Abu Talib in a single year. The Ka'ba stood at the center of it all, and the Prophet returned to cleanse it of idols when Mecca was opened peacefully in Ramadan of 8 AH.",
     "source_citation": "Ibn Hisham, al-Sirah al-Nabawiyyah, sections on the Prophet's birth and the Conquest of Mecca; Martin Lings, Muhammad, chapters 'The Year of the Elephant' and 'The Conquest of Mecca'",
     "wiki_link": "https://en.wikipedia.org/wiki/Mecca",
-    "coord_note": "Coordinates are the Ka'ba itself. Confident.",
+    "coord_note": "Coordinates are the Ka'ba itself. Confident. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Great_Mosque_of_Mecca1.jpg/3840px-Great_Mosque_of_Mecca1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_license": "See Commons",
+    "in_pool": false
   },
   {
     "id": "hira",
@@ -68,11 +69,12 @@
     "description": "The oasis town of Yathrib, home of the Aws and Khazraj tribes, which welcomed the Prophet after the Hijrah and became known simply as al-Madinah, the City. His camel Qaswa' knelt on a drying-floor for dates belonging to two orphan boys, and the mosque and his own quarters were built there. The constitution binding the Muslims, the Ansar, and the Jewish tribes was drawn up here; the direction of prayer was changed toward Mecca here; and the Prophet died and was buried here in his wife 'A'ishah's chamber in 11 AH.",
     "source_citation": "Ibn Hisham, sections on the arrival at Medina and the building of the mosque; Sahih al-Bukhari, hadith on the Prophet's arrival and the building of the mosque (no. 428); Lings, Muhammad, chapters 'The Entry into Medina' and 'The Succession and the Burial'",
     "wiki_link": "https://en.wikipedia.org/wiki/Medina",
-    "coord_note": "Coordinates are the Prophet's Mosque. Confident.",
+    "coord_note": "Coordinates are the Prophet's Mosque. Confident. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Al-Masjid_An-Nabawi_%28Bird%27s_Eye_View%29.jpg/3840px-Al-Masjid_An-Nabawi_%28Bird%27s_Eye_View%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
     "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_license": "See Commons",
+    "in_pool": false
   },
   {
     "id": "badr",
@@ -328,11 +330,12 @@
     "description": "The far mosque of the Night Journey. The Prophet was carried by night from the Sacred Mosque in Mecca to this sanctuary, led the prophets in prayer there, and was raised through the heavens, returning before morning. The five daily prayers were prescribed during that night. Jerusalem was also the first qiblah, toward which the Muslims prayed for about sixteen months after the Hijrah.",
     "source_citation": "Qur'an 17:1 and 53:1-18; Sahih al-Bukhari, Book of the Virtues of the Ansar, chapters on the Night Journey and the Ascension; Sahih Muslim, Book of Faith, the hadith of the Isra'; Ibn Hisham, section on the Night Journey",
     "wiki_link": "https://en.wikipedia.org/wiki/Al-Aqsa_Mosque",
-    "coord_note": "Al-Aqsa compound, Jerusalem. Confident on position. Far outside the Hijaz - see the scoring note in the README.",
+    "coord_note": "Al-Aqsa compound, Jerusalem. Confident on position. Far outside the Hijaz - see the scoring note in the README. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "beyond",
     "image": null,
     "image_credit": null,
-    "image_license": null
+    "image_license": null,
+    "in_pool": false
   },
   {
     "id": "abyssinia",
@@ -418,11 +421,12 @@
     "description": "The Red Sea port serving Mecca, about seventy kilometres west of the sanctuary. It was from this stretch of coast that the first migrants took ship for Abyssinia, and it remained the sea gate through which pilgrims and trade reached the holy city. The caliph 'Uthman later made it the official port of Mecca.",
     "source_citation": "Ibn Hisham, section on the migration to Abyssinia and the embarkation on the Red Sea coast; al-Baladhuri, Futuh al-Buldan, on the establishment of Jeddah as the port of Mecca",
     "wiki_link": "https://en.wikipedia.org/wiki/Jeddah",
-    "coord_note": "Modern city centre / historic Al-Balad. Confident on the port. The exact embarkation point for Abyssinia is not fixed; some reports name al-Shu'aybah instead.",
+    "coord_note": "Modern city centre / historic Al-Balad. Confident on the port. The exact embarkation point for Abyssinia is not fixed; some reports name al-Shu'aybah instead. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
     "image": null,
     "image_credit": null,
-    "image_license": null
+    "image_license": null,
+    "in_pool": false
   },
   {
     "id": "yanbu",

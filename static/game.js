@@ -50,6 +50,13 @@ const RecenterControl = L.Control.extend({
 });
 map.addControl(new RecenterControl());
 
+// Permanent city labels (Mecca, Medina, Jeddah, Jerusalem, Damascus) so the
+// player has a reference frame. Satellite imagery of the Hijaz is visually
+// undifferentiated, so without these the game tests coordinate memory rather
+// than historical knowledge. Defined in landmarks.js; hardcoded modern cities,
+// never pool answers, so nothing here leaks a coordinate.
+addReferenceLandmarks(map);
+
 // ---------- DOM handles ----------
 
 const el = {
