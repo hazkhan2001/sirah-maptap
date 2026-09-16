@@ -131,6 +131,73 @@ Notes:
   browser actually used, so the tunnel URL ends up in shared links by
   itself.
 
+## Working on two machines
+
+Repo: https://github.com/hazkhan2001/sirah-maptap
+
+The loop, every time, on both machines:
+
+```
+git pull        # BEFORE you start
+...work...
+git add -A
+git commit -m "what you did"
+git push        # BEFORE you stop
+```
+
+The failure mode is forgetting the last step, then starting fresh somewhere
+else. You end up with two histories that both moved on from the same point,
+and git refuses to push until you reconcile them. Set this once per machine
+so reconciling replays your commits on top instead of making a merge commit:
+
+```
+git config --global pull.rebase true
+```
+
+### First time on the Mac
+
+```bash
+git clone https://github.com/hazkhan2001/sirah-maptap.git
+cd sirah-maptap
+python3 -m venv .venv
+source .venv/bin/activate          # note: bin/, not Scripts/
+pip install -r requirements.txt
+```
+
+Then fetch the province boundaries, which are gitignored (see above), and
+run it:
+
+```bash
+python -c "import json,urllib.request as r; m=json.load(r.urlopen('https://www.geoboundaries.org/api/current/gbOpen/SAU/ADM1/')); r.urlretrieve(m['gjDownloadURL'],'data/hijaz_provinces.geojson'); print('saved')"
+python app.py
+```
+
+### What git does NOT carry across
+
+- **`.venv/`** — gitignored, and rightly so: it contains platform-specific
+  binaries that would not run on the other OS anyway. Create a fresh one
+  per machine, as above.
+- **`data/hijaz_provinces.geojson`** — gitignored as re-fetchable. Without
+  it the app runs fine and province outlines just do not draw, which is
+  easy to mistake for a bug. Run the fetch command on each machine.
+
+Photos *do* come across, since the URLs live in `data/events.json`, which
+is committed.
+
+### Do not sync this folder with Dropbox, iCloud or OneDrive
+
+Cloud sync and git are both trying to manage the same files, and sync
+services will happily corrupt `.git` by copying half-written objects or
+resurrecting deleted ones. Git is already the sync mechanism here. Two
+clones plus push and pull is the whole answer.
+
+### Line endings
+
+Already handled. `.gitattributes` sets `* text=auto`, so files are stored
+with LF in the repo, checked out as CRLF on Windows and LF on macOS. The
+"CRLF will be replaced by LF" messages on Windows are that working as
+intended, not a warning you need to act on.
+
 ## Layout
 
 ```
