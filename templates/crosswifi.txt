@@ -1,0 +1,17 @@
+Run the following program if you want to run the program on an open server
+
+$env:SIRAH_TRUST_PROXY = "1"
+$env:SIRAH_SECRET_KEY = (python -c "import secrets; print(secrets.token_hex(32))")
+.\.venv\Scripts\python.exe app.py
+
+cloudflared tunnel --url http://localhost:5000
+
+you must open two terminals split by one another to run the cloudfare host. The link for the playable 
+game for phones will be under the "it may take soem time to be reachable" line at the very top
+
+
+If you want to push onto git, run the following in your terminal:
+
+cd $HOME\Downloads\files
+git push -u origin main 
+
