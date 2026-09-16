@@ -64,6 +64,22 @@ app.secret_key = os.environ.get("SIRAH_SECRET_KEY", "dev-only-change-me")
 # one. Costs one stat() per template per request, which is nothing at this size.
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
+# Behind a reverse proxy (a Cloudflare tunnel, or a host like Render), the
+# browser speaks HTTPS to the proxy and the proxy speaks plain HTTP to us.
+# Flask only sees that second hop, so request.host_url reports "http://..."
+# and the shared link comes out non-HTTPS. That is not cosmetic: the
+# clipboard and Web Share APIs only exist in a secure context, so a link
+# that drops to http would leave the share button dead for whoever opens it.
+#
+# ProxyFix reads X-Forwarded-Proto and X-Forwarded-Host so we see what the
+# browser actually used. Those headers are trivially forged by any client,
+# so this is OPT-IN: only enable it when something trustworthy really is in
+# front of us, never when the app is exposed directly.
+if os.environ.get("SIRAH_TRUST_PROXY") == "1":
+    from werkzeug.middleware.proxy_fix import ProxyFix
+
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+
 
 # --------------------------------------------------------------------------
 # Answer key

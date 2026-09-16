@@ -87,6 +87,50 @@ Note that locations outside Saudi Arabia get no province outline, because
 these boundaries stop at the Saudi border. That is the intended graceful
 degradation, not a bug.
 
+## Share it beyond your LAN
+
+Phones on *your* wifi can use the `http://192.168.x.x:5000` address the
+server prints. Phones on *other* networks need a tunnel.
+
+Leave the app running, then in a **second terminal**:
+
+```powershell
+cloudflared tunnel --url http://localhost:5000
+```
+
+It prints a `https://something.trycloudflare.com` address. Anyone, anywhere,
+can open that while both the app and the tunnel keep running.
+
+Start the app like this when you intend to tunnel:
+
+```powershell
+$env:SIRAH_TRUST_PROXY = "1"
+$env:SIRAH_SECRET_KEY = (python -c "import secrets; print(secrets.token_hex(32))")
+.\.venv\Scripts\python.exe app.py
+```
+
+- `SIRAH_TRUST_PROXY=1` makes shared links come out `https://` rather than
+  `http://`. Not cosmetic: the clipboard and Web Share APIs only work in a
+  secure context, so an `http` link leaves the share button dead for
+  whoever opens it. Only set this when a proxy really is in front of the
+  app - the headers it trusts are forgeable by any direct client.
+- `SIRAH_SECRET_KEY` replaces the `dev-only-change-me` fallback. That
+  fallback is in this repo, so anyone could forge a session cookie against
+  a server still using it. Low stakes with no accounts, but do not put the
+  known key on the public internet.
+
+Notes:
+
+- Quick tunnels are **ephemeral**. The URL changes every time you start
+  one, and dies when you close the terminal. Fine for a class session, not
+  for anything you want to link to permanently - see the hosting section.
+- This exposes Flask's development server to the public internet. It is
+  single-threaded and not hardened. Acceptable for a short playtest, not
+  for leaving up.
+- You do not need `SIRAH_PUBLIC_URL` for this. The app reads the host the
+  browser actually used, so the tunnel URL ends up in shared links by
+  itself.
+
 ## Layout
 
 ```
