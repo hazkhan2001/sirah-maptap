@@ -5,11 +5,12 @@ locations, one at a time, taps a satellite map of the Hijaz to guess where
 each happened, then sees the distance, the score, a photo and a sourced
 write-up for each.
 
-51 locations are in the pool (47 selectable as daily rounds). The day's 3 are
-seeded from the date, so every player worldwide gets the same 3 until
+71 locations are in the pool (67 selectable as daily rounds): 51 from the
+sirah and 20 from the Rashidun period, Abu Bakr through Uthman. The day's 3
+are seeded from the date, so every player worldwide gets the same 3 until
 midnight America/New_York.
 
-`/explore` is a separate, unscored reference map of all 36 locations, for
+`/explore` is a separate, unscored reference map of all 71 locations, for
 studying before playing or for walking a class through the whole timeline.
 A local streak tracker (days played, current streak) lives in the browser
 and needs no account - see Known open questions for what's still [PLANNED].
@@ -254,10 +255,21 @@ GET  /api/locations every location WITH coordinates - intentionally not
 }
 ```
 
-`region` is `"hijaz"` or `"beyond"`. As of 2026-09-17 it drives the scoring
-cutoff (see below) as well as the pin color on `/explore` - the handful of
-locations far outside the Hijaz (Jerusalem, Aksum, Mu'tah, Ayla, Najran,
-Bosra) no longer need every write-up re-authored to be treated differently.
+`region` is `"hijaz"`, `"beyond"` or `"far"`. It drives the scoring cutoff
+(see below) and the pin color on `/explore` - gold, clay and lapis
+respectively. The tier widens as a location moves away from the frame of
+reference a player actually has:
+
+| region   | cutoff | covers                                              |
+|----------|--------|-----------------------------------------------------|
+| `hijaz`  | 100 km | the Hijaz proper                                     |
+| `beyond` | 300 km | the Levant and the rest of Arabia                    |
+| `far`    | 600 km | Egypt, North Africa, Iraq, Persia, Anatolia, Central Asia |
+
+A location is never scored against a tighter cutoff than the player could
+reasonably hit. `far` exists because Nahavand is ~1,500 km from Mecca and
+Merv ~3,500 km; at the 300 km cutoff those would reproduce the exact
+problem `beyond` was created to solve.
 
 ## Conventions worth keeping
 
@@ -280,13 +292,19 @@ Bosra) no longer need every write-up re-authored to be treated differently.
 
 ## Known open questions
 
-- **The 100 km cutoff - resolved 2026-09-17.** Score is now
-  `100 * (1 - distance_km / cutoff)`, floored at 0, where `cutoff` is 100 km
-  for the 30 Hijaz locations (unchanged - every kilometre still visibly
-  matters) and 300 km for the six `"beyond"` locations, so a guess that gets
-  the right country now scores partial credit instead of a guaranteed 0.
-  Percentage-of-cutoff rather than a flat subtraction, so every score still
-  lands in 0-100 regardless of which cutoff applied.
+- **The 100 km cutoff - resolved 2026-09-17, extended to three tiers with
+  the Rashidun expansion.** Score is `100 * (1 - distance_km / cutoff)`,
+  floored at 0, with the cutoff taken from the location's `region` (see the
+  table above). Percentage-of-cutoff rather than a flat subtraction, so
+  every score still lands in 0-100 regardless of which cutoff applied.
+- **Rashidun coverage is uneven by design, and honestly so.** Of 34
+  researched candidates, 20 made it in. Ajnadayn was dropped because its
+  site is genuinely unknown rather than merely imprecise; the Saqifah, the
+  Quran compilation, Umar's assassination and the siege of Uthman's house
+  were all dropped because they happened within a few hundred metres of the
+  existing `medina` pin and are not distinct rounds. The Ridda wars are
+  thinly covered because most of their battles were fought at wells and
+  waystations nobody has fixed on a map.
 - **Clustered pins.** Seven locations sit within about 10 km of Medina and
   five within about 12 km of Mecca. At the current scoring granularity some
   of these are hard to tell apart - Jannat al-Baqi' is 0.3 km from the Medina

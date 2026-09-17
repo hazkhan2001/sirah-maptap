@@ -42,11 +42,22 @@ const el = {
   close: document.getElementById("explore-close"),
 };
 
-// "Beyond" locations (outside the Hijaz) get the clay color instead of
-// gold, so the map itself hints at the region split the write-ups mention.
+// The map hints at the same region split the write-ups and the scoring
+// cutoffs use: gold in the Hijaz, clay for "beyond" (the Levant and the
+// rest of Arabia), lapis for "far" (Egypt, Iraq, Persia and beyond).
+//
+// A lookup rather than a ternary chain, so adding a fourth tier later is a
+// one-line change here and a one-line change in style.css, with no risk of
+// an unreachable branch. An unknown region falls through to plain gold,
+// matching how app.py defaults an unknown region to the Hijaz cutoff.
+const REGION_PIN_CLASS = {
+  beyond: "pin-answer explore-pin--beyond",
+  far: "pin-answer explore-pin--far",
+};
+
 function iconFor(loc) {
   return L.divIcon({
-    className: loc.region === "beyond" ? "pin-answer explore-pin--beyond" : "pin-answer",
+    className: REGION_PIN_CLASS[loc.region] || "pin-answer",
     iconSize: [20, 20],
     iconAnchor: [10, 10],
   });

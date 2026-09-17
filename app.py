@@ -156,16 +156,24 @@ def haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     return EARTH_RADIUS_KM * c
 
 
-# Per-region scoring cutoff, in km. The 30 Hijaz locations keep the
-# original 100km cutoff, where every kilometre visibly matters. The 6
-# "beyond" locations (Jerusalem-adjacent write-ups, Abyssinia, Mu'tah,
-# Ayla, Najran, Bosra) sit hundreds of km from the Hijaz; under one flat
-# cutoff a guess 150km away - meaning the player had the right country -
-# still scored zero, and the reference landmarks made this sharper by
-# making those locations reachable by reasoning for the first time.
-# Decided with Haz on 2026-09-17: widen the cutoff for "beyond" only,
-# leave the Hijaz cutoff untouched.
-SCORING_CUTOFF_KM = {"hijaz": 100, "beyond": 300}
+# Per-region scoring cutoff, in km. The cutoff widens as the location
+# moves away from the frame of reference the player actually has.
+#
+#   hijaz  (100km) - the Hijaz proper. Every kilometre visibly matters.
+#   beyond (300km) - the Levant and Arabia outside the Hijaz. Under one
+#                    flat cutoff a guess 150km out, meaning the player had
+#                    the right country, still scored zero. Decided with
+#                    Haz on 2026-09-17.
+#   far    (600km) - Egypt, North Africa, Iraq, Persia, Anatolia and
+#                    Central Asia. Added with the Rashidun expansion:
+#                    these sit 1,500-3,500km from Mecca, so 300km would
+#                    reproduce the exact problem the "beyond" tier was
+#                    created to fix. A player who reasons "western Iran,
+#                    east of Baghdad" should be scored for knowing that.
+#
+# Scaling rather than subtracting is what keeps all three tiers in the
+# same 0-100 range - see score_for_distance below.
+SCORING_CUTOFF_KM = {"hijaz": 100, "beyond": 300, "far": 600}
 
 
 def score_for_distance(distance_km: float, region: str) -> int:

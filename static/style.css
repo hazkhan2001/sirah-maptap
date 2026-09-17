@@ -10,6 +10,10 @@
   /* accent: correct pin, score */
   --clay: #b8543f;
   /* guess pin and distance line */
+  --lapis: #4a7fb5;
+  /* "far" region pins on /explore. Blue against gold and clay stays
+     separable under red-green colour blindness, which two warm hues
+     would not. */
   --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
 }
 
@@ -826,6 +830,13 @@ body.is-revealed .leaflet-container .leaflet-interactive {
 .explore-pin--beyond {
   background: var(--clay);
   box-shadow: 0 0 0 4px rgba(184, 84, 63, 0.45), 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* "Far" region: Egypt, North Africa, Iraq, Persia, Anatolia, Central Asia.
+   Same halo geometry as the other two so the pins read as one family. */
+.explore-pin--far {
+  background: var(--lapis);
+  box-shadow: 0 0 0 4px rgba(74, 127, 181, 0.45), 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* The write-up panel on /explore reuses .result's spacing, image and text
