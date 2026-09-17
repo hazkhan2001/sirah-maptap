@@ -156,9 +156,28 @@ def haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     return EARTH_RADIUS_KM * c
 
 
-def score_for_distance(distance_km: float) -> int:
-    """Linear scoring: 100 minus km, never below 0 (per the spec)."""
-    return max(0, round(100 - distance_km))
+# Per-region scoring cutoff, in km. The 30 Hijaz locations keep the
+# original 100km cutoff, where every kilometre visibly matters. The 6
+# "beyond" locations (Jerusalem-adjacent write-ups, Abyssinia, Mu'tah,
+# Ayla, Najran, Bosra) sit hundreds of km from the Hijaz; under one flat
+# cutoff a guess 150km away - meaning the player had the right country -
+# still scored zero, and the reference landmarks made this sharper by
+# making those locations reachable by reasoning for the first time.
+# Decided with Haz on 2026-09-17: widen the cutoff for "beyond" only,
+# leave the Hijaz cutoff untouched.
+SCORING_CUTOFF_KM = {"hijaz": 100, "beyond": 300}
+
+
+def score_for_distance(distance_km: float, region: str) -> int:
+    """
+    Score as a percentage of the way to the region's cutoff, not a flat
+    subtraction. Scaling this way - rather than just swapping in 300 and
+    subtracting - keeps every score in the same 0-100 range the UI, the
+    share bars and the streak tracker all assume. A flat "300 - distance"
+    would let a close "beyond" guess score above 100 and break all three.
+    """
+    cutoff = SCORING_CUTOFF_KM.get(region, SCORING_CUTOFF_KM["hijaz"])
+    return max(0, round(100 * (1 - distance_km / cutoff)))
 
 
 # --------------------------------------------------------------------------
@@ -277,7 +296,7 @@ def build_reveal(state: dict) -> dict:
             "guess": guess,
             "answer": {"lat": event["true_lat"], "lng": event["true_lng"]},
             "distance_km": round(distance, 1),
-            "score": score_for_distance(distance),
+            "score": score_for_distance(distance, event.get("region", "hijaz")),
         })
 
     daily_score = round(sum(r["score"] for r in results) / len(results))
@@ -304,6 +323,43 @@ def api_regions():
         return jsonify({"available": False}), 404
     with open(REGIONS_FILE, encoding="utf-8") as f:
         return jsonify({"available": True, "geojson": json.load(f)})
+
+
+@app.route("/explore")
+def explore():
+    """A reference map of every location, for study rather than guessing."""
+    return render_template("explore.html")
+
+
+@app.route("/api/locations")
+def api_locations():
+    """
+    Every location in the gazetteer, coordinates included, for the Explore
+    map. This is deliberately different from /api/today: the "answers stay
+    server-side" rule exists to protect the daily GUESSING game, and this
+    route is not that game - Explore's whole purpose is to show everything,
+    the same way the write-ups already do once a round is revealed. Showing
+    coordinates here doesn't undermine what that rule protects.
+    """
+    locations = [
+        {
+            "id": event["id"],
+            "name": event["name"],
+            "era": event["era"],
+            "description": event["description"],
+            "source_citation": event["source_citation"],
+            "wiki_link": event["wiki_link"],
+            "lat": event["true_lat"],
+            "lng": event["true_lng"],
+            "region": event.get("region", "hijaz"),
+            "in_pool": event.get("in_pool", True),
+            "image": event.get("image"),
+            "image_credit": event.get("image_credit"),
+            "image_license": event.get("image_license"),
+        }
+        for event in EVENTS
+    ]
+    return jsonify({"locations": locations})
 
 
 @app.route("/api/reset", methods=["POST"])

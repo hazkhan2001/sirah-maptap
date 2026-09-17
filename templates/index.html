@@ -31,6 +31,7 @@
     <h2 class="prompt" id="prompt">loading…</h2>
     <p class="hint" id="hint">Tap the map to place your guess.</p>
     <button id="confirm" class="confirm" disabled>Confirm guess</button>
+    <a href="/explore" class="explore-link explore-link--panel">Explore all locations</a>
   </section>
 
   <!-- Reveal drawer (right side), hidden until all 3 guesses are in -->
@@ -40,6 +41,7 @@
       <p class="reveal-day" id="reveal-day"></p>
       <p class="reveal-score"><span id="daily-score">0</span><span class="of">/100</span></p>
       <p class="reveal-sub">Average of three rounds</p>
+      <p class="streak-line" id="streak-line"></p>
       <p class="legend">
         <span class="legend-key pin-answer"></span> Correct location
         <span class="legend-key pin-guess"></span> Your guess
@@ -48,6 +50,7 @@
     <div id="results"></div>
     <footer class="reveal-foot">
       <p>Come back tomorrow for three new locations.</p>
+      <a href="/explore" class="explore-link">Explore every location on the map →</a>
       <button id="share" class="share-btn" type="button">Share your score</button>
       <!-- aria-live so a screen reader announces "Copied" without moving focus -->
       <p id="share-status" class="share-status" role="status" aria-live="polite" hidden></p>

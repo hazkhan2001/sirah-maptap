@@ -11,8 +11,8 @@
     "coord_note": "Coordinates are the Ka'ba itself. Confident. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Great_Mosque_of_Mecca1.jpg/3840px-Great_Mosque_of_Mecca1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Saudipics.com",
+    "image_license": "CC BY-SA 4.0",
     "in_pool": false
   },
   {
@@ -27,8 +27,8 @@
     "coord_note": "Coordinates are the mountain summit area. Confident.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Jabbal_An-Nour_%282024%29.jpg/3840px-Jabbal_An-Nour_%282024%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Kaliper1",
+    "image_license": "CC BY-SA 4.0"
   },
   {
     "id": "thawr",
@@ -42,8 +42,8 @@
     "coord_note": "Coordinates are the peak of Jabal Thawr. The cave is near the summit. Confident on the mountain, verify the exact cave point.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Jabele_thor_-_panoramio.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Abdul Razzaq Phulpot…",
+    "image_license": "CC BY-SA 3.0"
   },
   {
     "id": "taif",
@@ -57,8 +57,8 @@
     "coord_note": "City center. Confident.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%81_%D9%85%D9%86_%D8%AC%D8%A8%D9%84_%D8%A7%D9%84%D9%87%D8%AF%D9%891.jpg/3840px-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D9%81_%D9%85%D9%86_%D8%AC%D8%A8%D9%84_%D8%A7%D9%84%D9%87%D8%AF%D9%891.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "عباد ديرانية",
+    "image_license": "CC BY-SA 3.0"
   },
   {
     "id": "medina",
@@ -72,8 +72,8 @@
     "coord_note": "Coordinates are the Prophet's Mosque. Confident. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Al-Masjid_An-Nabawi_%28Bird%27s_Eye_View%29.jpg/3840px-Al-Masjid_An-Nabawi_%28Bird%27s_Eye_View%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Konevi",
+    "image_license": "CC0",
     "in_pool": false
   },
   {
@@ -88,8 +88,8 @@
     "coord_note": "Modern town of Badr. The battlefield lies at the edge of the town. Confident to within a few km.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Siyer-i_Nebi_-_Imam_Ali_und_Hamza_bei_dem_vorgezogenen_Einzelkampf_in_Badr_gegen_die_G%C3%B6tzendiener.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Lütfi Abdullah",
+    "image_license": "Public domain"
   },
   {
     "id": "uhud",
@@ -103,8 +103,8 @@
     "coord_note": "Southern foot of the mountain near the martyrs' cemetery. The mountain itself is several km long, so this is a v1 whole-location pin. Verify.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/The_Prophet_Muhammad_and_the_Muslim_Army_at_the_Battle_of_Uhud%2C_from_the_Siyer-i_Nebi%2C_1595.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Unknown authorUnknown author",
+    "image_license": "Public domain"
   },
   {
     "id": "hudaybiyyah",
@@ -134,8 +134,8 @@
     "coord_note": "Modern Khaybar town at the center of the oasis. Confident to within a few km.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Hazrat_Ali_slays_Marhab.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Major Sykes",
+    "image_license": "Public domain"
   },
   {
     "id": "arafat",
@@ -149,8 +149,8 @@
     "coord_note": "Coordinates are Jabal al-Rahmah, the hill on the plain. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Pilgrims_cover_Arafat%27s_roads%2C_plains_and_mountain_-_Flickr_-_Al_Jazeera_English.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Al Jazeera English",
+    "image_license": "CC BY-SA 2.0"
   },
   {
     "id": "hunayn",
@@ -164,8 +164,8 @@
     "coord_note": "Exact site is disputed. This pin follows the common identification with Wadi Hunayn near al-Shara'i east of Mecca. Approximate; cite one opinion per the v1 rule. Verify.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/23/Balami_-_Tarikhnama_-_The_Battle_of_Hunayn_-_The_Prophet%27s_life_is_threatened.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Abu Ali Bal'ami",
+    "image_license": "Public domain"
   },
   {
     "id": "tabuk",
@@ -179,8 +179,8 @@
     "coord_note": "Modern city of Tabuk. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/First_Islamic_State_under_Prophet_Muhammad%2C_ca._632.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Fazoffic",
+    "image_license": "CC0"
   },
   {
     "id": "hijr",
@@ -210,8 +210,8 @@
     "coord_note": "Modern mosque on the traditional site, south of Medina. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/Masjid_Quba_Mosque.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Muhammad Mahdi Karim",
+    "image_license": "GFDL 1.2"
   },
   {
     "id": "qiblatayn",
@@ -225,8 +225,8 @@
     "coord_note": "Modern mosque on the traditional site. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Masjid_al-Qiblatain.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Aiman titi",
+    "image_license": "CC BY-SA 3.0"
   },
   {
     "id": "khandaq",
@@ -240,8 +240,8 @@
     "coord_note": "Pinned at Mount Sal' in northwest Medina. The trench itself ran for some distance across the northern approach, so this is a point standing in for a line.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Battle_of_Trench_627_CE.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "DrZubairRashid",
+    "image_license": "CC BY-SA 4.0",
     "image_search": "Mount Sala Medina"
   },
   {
@@ -256,8 +256,8 @@
     "coord_note": "Adjacent to the Prophet's Mosque. Confident. Sits close to the Medina pin, so both can appear in the same day's round.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Al-Baqi_Cemetery_2021.jpg/3840px-Al-Baqi_Cemetery_2021.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Saleh Al Hussain",
+    "image_license": "CC BY 4.0"
   },
   {
     "id": "mina",
@@ -271,8 +271,8 @@
     "coord_note": "Valley centre near the Jamarat. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Mina_Overview.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Mubeen Rahman",
+    "image_license": "CC BY 3.0"
   },
   {
     "id": "muzdalifah",
@@ -286,8 +286,8 @@
     "coord_note": "Centre of the plain, between Arafat and Mina. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Fajr_in_Muzdalifah.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Arisdp",
+    "image_license": "CC BY-SA 4.0"
   },
   {
     "id": "jiranah",
@@ -300,10 +300,10 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Ji'ranah",
     "coord_note": "Approximate. Northeast of Mecca on the road toward Ta'if. Needs verification.",
     "region": "hijaz",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Edited_Great_Mosque_of_Mecca1_5-2019-ccsa4.0_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
-    "image_search": "Ji'ranah mosque Mecca"
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Al_-_Jaranah_Mosque.jpg/3840px-Al_-_Jaranah_Mosque.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "saudipics",
+    "image_license": "CC BY-SA 4.0",
+    "image_search": "Masjid al-Ji'ranah"
   },
   {
     "id": "dhul_hulayfah",
@@ -317,8 +317,8 @@
     "coord_note": "Site of the modern Abyar 'Ali mosque. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Abiar_Ali.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Aiman titi",
+    "image_license": "CC BY-SA 3.0",
     "image_search": "Dhu al-Hulayfah mosque Medina"
   },
   {
@@ -333,8 +333,8 @@
     "coord_note": "Al-Aqsa compound, Jerusalem. Confident on position. Far outside the Hijaz - see the scoring note in the README. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "beyond",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Jerusalem-2013-Temple_Mount-Al-Aqsa_Mosque_%28NE_exposure%29.jpg/3840px-Jerusalem-2013-Temple_Mount-Al-Aqsa_Mosque_%28NE_exposure%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Godot13",
+    "image_license": "CC BY-SA 4.0",
     "in_pool": false
   },
   {
@@ -349,8 +349,8 @@
     "coord_note": "Pinned at Aksum, the kingdom's capital. The migrants' exact place of settlement is not fixed in the sources. Far outside the Hijaz.",
     "region": "beyond",
     "image": "https://upload.wikimedia.org/wikipedia/commons/4/44/Aksum-107529.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Jim Williams",
+    "image_license": "CC BY-SA 3.0 igo"
   },
   {
     "id": "mutah",
@@ -364,8 +364,8 @@
     "coord_note": "Modern Mu'tah, Jordan, near Karak. Outside the Hijaz.",
     "region": "beyond",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Battle_of_Mu%27tah_-_Strategic_Map_%28629_AD%29.svg/960px-Battle_of_Mu%27tah_-_Strategic_Map_%28629_AD%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "SPQR10",
+    "image_license": "CC0"
   },
   {
     "id": "dumat",
@@ -379,8 +379,8 @@
     "coord_note": "Historic site at modern Al-Jawf, near Sakaka. Confident.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/The_old_city_of_Adummatu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Nora Ali at English Wikipedia",
+    "image_license": "CC BY-SA 3.0"
   },
   {
     "id": "tayma",
@@ -394,8 +394,8 @@
     "coord_note": "Oasis town centre. Confident on the town. Its role is recorded briefly and in less detail than the battles.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Old_town_of_Tayma_2020.jpg/3840px-Old_town_of_Tayma_2020.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Richard Mortel",
+    "image_license": "CC BY 2.0"
   },
   {
     "id": "ayla",
@@ -409,8 +409,8 @@
     "coord_note": "Ancient Ayla lies within modern Aqaba, Jordan. Outside the Hijaz.",
     "region": "beyond",
     "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/AQABA_2.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Freedom's Falcon",
+    "image_license": "CC BY-SA 3.0"
   },
   {
     "id": "jeddah",
@@ -424,8 +424,8 @@
     "coord_note": "Modern city centre / historic Al-Balad. Confident on the port. The exact embarkation point for Abyssinia is not fixed; some reports name al-Shu'aybah instead. Shown as a permanent map label, so excluded from the answer pool.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AC%D8%AF%D8%A9_%D8%BA%D8%B1%D8%A8_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%282025%29_%28cropped%29.jpg/3840px-%D8%A7%D9%84%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9_%D9%81%D9%8A_%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%AC%D8%AF%D8%A9_%D8%BA%D8%B1%D8%A8_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%282025%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Saudi Press Agency (SPA)",
+    "image_license": "CC BY-SA 4.0",
     "in_pool": false
   },
   {
@@ -440,8 +440,8 @@
     "coord_note": "Modern port city. The early expeditions ranged across this district rather than one fixed point, so the pin stands for a region.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Yanbu_Beach_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Abdullah Imran (Pakistan)",
+    "image_license": "CC BY-SA 4.0"
   },
   {
     "id": "juhfah",
@@ -455,9 +455,9 @@
     "coord_note": "Site near modern Rabigh. The old settlement is ruined and its exact position is debated. Approximate.",
     "region": "hijaz",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Rabigh_Power_Plant.jpg/3840px-Rabigh_Power_Plant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
-    "image_search": "Rabigh Saudi Arabia"
+    "image_credit": "HUTA Group photographer",
+    "image_license": "CC BY-SA 4.0",
+    "image_search": "Al-Juhfah Rabigh"
   },
   {
     "id": "usfan",
@@ -470,9 +470,10 @@
     "wiki_link": "https://en.wikipedia.org/wiki/Usfan",
     "coord_note": "Modern 'Usfan on the Mecca-Medina road. Reasonably confident.",
     "region": "hijaz",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Main_Street_in_Fairmont.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/The_Qishla_of_Asfan_002_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Ammar shaker",
+    "image_license": "CC BY-SA 4.0",
+    "image_search": "Usfan Saudi Arabia"
   },
   {
     "id": "abwa",
@@ -486,8 +487,8 @@
     "coord_note": "Approximate. The village lies between Mecca and Medina toward Rabigh; the sources place it by stages along the road rather than by fixed position. Needs verification.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/%D8%A7%D9%84%D8%B6%D8%B1%D9%8A%D8%AD_%D8%A7%D9%84%D8%A3%D9%8A%D9%85%D9%86_%D9%84%D8%B6%D8%B1%D9%8A%D8%AD_%D8%A7%D9%84%D8%B3%D9%8A%D8%AF%D8%A9_%D8%A2%D9%85%D9%86%D8%A9_%D8%B9%D9%84%D9%8A%D9%87%D8%A7_%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Wikimedia Commons (credit unresolved)",
+    "image_license": "Public domain",
     "image_search": "Al-Abwa Saudi Arabia"
   },
   {
@@ -502,8 +503,8 @@
     "coord_note": "Commonly identified with modern al-Ha'it in Ha'il province. Approximate; needs verification.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/Fadak_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
+    "image_credit": "Fadel Jawish",
+    "image_license": "CC BY-SA 4.0",
     "image_search": "Al-Ha'it Saudi Arabia"
   },
   {
@@ -518,8 +519,8 @@
     "coord_note": "Modern Najran, far southern Saudi Arabia near the Yemeni border. Well outside the Hijaz.",
     "region": "beyond",
     "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/%D9%82%D9%84%D8%B9%D8%A9_%D8%B1%D8%B9%D9%88%D9%85.jpg/3840px-%D9%82%D9%84%D8%B9%D8%A9_%D8%B1%D8%B9%D9%88%D9%85.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "Mansour mohsen",
+    "image_license": "CC BY-SA 4.0"
   },
   {
     "id": "bosra",
@@ -533,8 +534,8 @@
     "coord_note": "Ancient city in Daraa province, Syria. Outside the Hijaz. Note that the Bahira episode rests mainly on the sira literature and is weaker in the hadith collections.",
     "region": "beyond",
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Bosra_square.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons"
+    "image_credit": "upyernoz",
+    "image_license": "CC BY 2.0"
   },
   {
     "id": "nakhlah",
@@ -548,8 +549,248 @@
     "coord_note": "Approximate. Wadi Nakhlah lies east of Mecca toward Ta'if and the sources differ on the exact spot. Needs verification.",
     "region": "hijaz",
     "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Tihama_on_the_Red_Sea_near_Khaukha%2C_Yemen.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-    "image_credit": "Wikimedia Commons",
-    "image_license": "See Commons",
-    "image_search": "Wadi Nakhlah Saudi Arabia"
+    "image_credit": "Bernard Gagnon",
+    "image_license": "CC BY-SA 3.0",
+    "image_search": "Nakhlah Saudi Arabia"
+  },
+  {
+    "id": "dar_al_arqam",
+    "name": "Dar al-Arqam",
+    "true_lat": 21.4236,
+    "true_lng": 39.8272,
+    "era": "c. 613–616 CE, early years of the Meccan mission",
+    "description": "In the first, most dangerous years after the revelation began, the Prophet needed somewhere the small Muslim community could meet, pray, and be taught away from Quraysh's notice. He found it in the house of a young Meccan named al-Arqam ibn Abi al-Arqam, near the foot of Mount Safa. It functioned as Islam's first school, with the Prophet teaching directly. Two of the most consequential conversions of the Meccan period happened here: Hamza ibn Abd al-Muttalib, and soon after, Umar ibn al-Khattab, whose acceptance of Islam is remembered as emboldening the small community to begin praying openly for the first time.",
+    "source_citation": "Ibn Hisham's Sirat Rasul Allah (account of Umar's conversion at Dar al-Arqam).",
+    "wiki_link": "https://en.wikipedia.org/wiki/Dar_al-Arqam",
+    "coord_note": "Approximate. No source gives exact coordinates for the house itself; sources agree only that it stood at the northern foot of Mount Safa. Same confidence tier as al-Ji'ranah, Nakhlah and al-Abwa' already in the pool.",
+    "region": "hijaz",
+    "image": null,
+    "image_credit": null,
+    "image_license": null,
+    "image_search": "Dar al-Arqam Mecca library Bab al-Safa"
+  },
+  {
+    "id": "shib_abi_talib",
+    "name": "Shi'b Abi Talib",
+    "true_lat": 21.4228,
+    "true_lng": 39.8289,
+    "era": "616–619 CE (7th–10th year of prophethood)",
+    "description": "When social pressure failed to halt the spread of Islam, a coalition of Quraysh clans agreed to a total boycott of Banu Hashim and Banu al-Muttalib, the Prophet's own clan and its allies, Muslim and non-Muslim alike: no trade, no marriage, no food sold to them. Abu Talib, the Prophet's uncle and protector, moved the whole clan into this narrow valley on Mecca's edge, where they lived in real hardship for roughly three years. The boycott collapsed only when several Quraysh figures grew ashamed of it and tore up the pact. Most of the valley has since been absorbed into the expanded Grand Mosque; the surviving portion outside its walls is known today as Suq al-Layl.",
+    "source_citation": "Ibn Ishaq's account of the boycott, preserved in Ibn Hisham's Sirat Rasul Allah.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Persecution_of_Muslims_by_Meccans",
+    "coord_note": "Approximate. No source gives surveyed coordinates for the valley; located here between Mount Abu Qubays and Mount Khandama per general topographic description, not a fixed point.",
+    "region": "hijaz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/82/TIB_V1_D217_Plan_of_Mecca.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Ibn Battuta (????)",
+    "image_license": "Public domain",
+    "image_search": "Suq al-Layl Mecca Abu Qubays"
+  },
+  {
+    "id": "safa",
+    "name": "Mount Safa",
+    "true_lat": 21.42361,
+    "true_lng": 39.82722,
+    "era": "First public sermon c. 613 CE; post-conquest allegiance 630 CE",
+    "description": "Safa is a low hill immediately beside the Ka'ba, the site of two turning points seventeen years apart. Here, around 613 CE, the Prophet climbed and called out to the Quraysh clan by clan, asking if they would believe him were he to warn them of an approaching army — they answered they had never known him to lie — before declaring himself a warner of coming judgment, generally reckoned the start of his public preaching in Mecca. Seventeen years later, after the bloodless conquest of Mecca, he stood at this same spot to receive the formal allegiance of the city that had once driven him out: first from the men, then separately from the women, who pledged verbally and without a handshake.",
+    "source_citation": "Sahih al-Bukhari 4770 (Book of Tafsir, on Surah al-Shu'ara) for the first sermon; Ibn Hisham's Sirat Rasul Allah for the post-conquest allegiance scene.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Safa_and_Marwa",
+    "coord_note": "Good confidence — matches the surveyed Safa/Marwa site coordinate. Sits close to the Mecca reference landmark, like several other Meccan-period entries; that reflects real geography (this is the old city core), not an approximation error.",
+    "region": "hijaz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Mount_Safa_Mecca.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Swerveut (talk)",
+    "image_license": "CC BY-SA 3.0",
+    "image_search": "Jabal al-Safa Masjid al-Haram Mecca"
+  },
+  {
+    "id": "souk_okaz",
+    "name": "Souk Okaz",
+    "true_lat": 21.47436,
+    "true_lng": 40.64487,
+    "era": "c. 619–621 CE, later Meccan period",
+    "description": "Okaz was the largest of pre-Islamic Arabia's annual trade fairs, held near Ta'if during the sacred months when tribal feuds were suspended. After losing both his wife Khadijah and his protector Abu Talib, and being turned away at Ta'if, the Prophet went from tent to tent at fairs like this one, introducing himself to visiting tribes and asking them to shelter him and hear his message — mostly without success. It was this same practice of approaching outside tribes during the pilgrimage season that eventually led him to the small group of Yathrib men who would become the nucleus of the Ansar.",
+    "source_citation": "Sahih al-Bukhari 2098 (Book of Sales and Trade) confirms Okaz as a pre-Islamic market; the outreach account is from Ibn Ishaq's Sira, preserved in Ibn Hisham.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Souk_Okaz",
+    "coord_note": "Good confidence — matches the surveyed archaeological site coordinates.",
+    "region": "hijaz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Old_Jeddah_%28Al_Balad%29_architecture_3_Feb_2022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Francisco Anzola",
+    "image_license": "CC BY 2.0",
+    "image_search": "Souk Okaz archaeological site Taif"
+  },
+  {
+    "id": "bayah_aqabah",
+    "name": "Bay'ah Mosque (Pledges of al-Aqabah)",
+    "true_lat": 21.424722,
+    "true_lng": 39.8675,
+    "era": "First Pledge 621 CE; Second Pledge 622 CE",
+    "description": "In a mountain pass at Mina, a small delegation from Yathrib met the Prophet during the pilgrimage season and pledged not to worship idols, steal, or kill their children — the First Pledge of al-Aqabah. A year later a much larger group, 75 men and women from Yathrib, returned and pledged something far more serious: to defend the Prophet as they would their own families, effectively inviting him to migrate to their city. This Second Pledge directly set the Hijrah in motion. A mosque built by the Abbasid caliph al-Mansur in 761 CE still marks the traditional site.",
+    "source_citation": "Ibn Hisham's Sirat Rasul Allah, Vol. I (terms and participants of the Second Pledge).",
+    "wiki_link": "https://en.wikipedia.org/wiki/Bay%27ah_Mosque",
+    "coord_note": "Good confidence — matches the mosque's surveyed coordinates. Sits close to the existing Mina pin, which is expected: the Aqabah pass is within Mina.",
+    "region": "hijaz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Edited_Great_Mosque_of_Mecca1_5-2019-ccsa4.0_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Saudipics.com",
+    "image_license": "CC BY-SA 4.0",
+    "image_search": "Masjid al-Bay'ah Mina mosque"
+  },
+  {
+    "id": "jannat_al_mualla",
+    "name": "Jannat al-Mu'alla",
+    "true_lat": 21.436991,
+    "true_lng": 39.829213,
+    "era": "Meccan period; most significant 619 CE",
+    "description": "This valley on Mecca's edge had served as the town's burial ground for generations before Islam, and in the Meccan period it took on particular weight. Within weeks of each other in 619 CE, the Prophet lost both his wife Khadijah, his first supporter and closest companion for twenty-five years, and his uncle Abu Talib, who had shielded him from Quraysh for decades without ever becoming Muslim himself. Both were buried here, and the year is remembered in sira literature as Aam al-Huzn, the Year of Sorrow — a loss that left the Prophet without his two strongest protectors in Mecca not long before the Hijrah.",
+    "source_citation": "Ibn Hisham's Sirat Rasul Allah; Ibn Sa'd's Kitab al-Tabaqat al-Kabir, Vol. 8 (biography of Khadijah bint Khuwaylid).",
+    "wiki_link": "https://en.wikipedia.org/wiki/Jannat_al-Mu%27alla",
+    "coord_note": "Good confidence — matches the surveyed cemetery coordinates.",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Jannat_ul_Mualla_Cemetery.jpg/3840px-Jannat_ul_Mualla_Cemetery.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Tubi719",
+    "image_license": "CC BY-SA 4.0",
+    "image_search": "Jannat al-Mu'alla cemetery Mecca"
+  },
+  {
+    "id": "marr_al_zahran",
+    "name": "Marr al-Zahran (Wadi Fatimah)",
+    "true_lat": 21.6,
+    "true_lng": 39.71,
+    "era": "10 Ramadan 8 AH (January 630 CE)",
+    "description": "The night before the Conquest of Mecca, the ten-thousand-strong Muslim army camped in this valley on the final approach to the city. The Prophet ordered every man to light his own campfire, and the sight of thousands of fires across the valley overnight convinced Abu Sufyan ibn Harb, who rode out to investigate, that resistance was hopeless. He accepted Islam that night and returned to warn the Quraysh. The modern Masjid al-Fath commemorates the encampment.",
+    "source_citation": "Ibn Hisham's Sirat Rasul Allah; Ibn Sa'd's Kitab al-Tabaqat al-Kabir.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Conquest_of_Mecca",
+    "coord_note": "Approximate. No source gives exact coordinates for the historic campsite; located here at Al-Jumum, where Masjid al-Fath marks the traditional site.",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Paris%2C_BnF%2C_Suppl%C3%A9ment_Persan_1030_fol._305v-306r_Muhammad_and_Ali_lead_destruction_of_Meccan_idols.jpg/3840px-Paris%2C_BnF%2C_Suppl%C3%A9ment_Persan_1030_fol._305v-306r_Muhammad_and_Ali_lead_destruction_of_Meccan_idols.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Unknown authorUnknown author",
+    "image_license": "Public domain",
+    "image_search": "Masjid al-Fath Wadi Fatimah Makkah"
+  },
+  {
+    "id": "khandama",
+    "name": "Jabal Khandama",
+    "true_lat": 21.400562,
+    "true_lng": 39.838847,
+    "era": "20 Ramadan 8 AH (630 CE)",
+    "description": "As Muslim columns entered Mecca from several directions on the day of the conquest, a group of Quraysh diehards under Ikrimah ibn Abi Jahl, Safwan ibn Umayyah, and Suhayl ibn Amr gathered here intending to fight. Khalid ibn al-Walid's column met and dispersed them in a brief skirmish — the only real fighting during an otherwise largely bloodless conquest. The mountain still overlooks the city today.",
+    "source_citation": "Ibn Hisham's Sirat Rasul Allah; al-Waqidi's Kitab al-Maghazi.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Conquest_of_Mecca",
+    "coord_note": "Good confidence — matches the surveyed peak coordinates. Distinct from Khandaq (the Trench, at Medina), already in the pool — different place, different word.",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Paris%2C_BnF%2C_Suppl%C3%A9ment_Persan_1030_fol._305v-306r_Muhammad_and_Ali_lead_destruction_of_Meccan_idols.jpg/3840px-Paris%2C_BnF%2C_Suppl%C3%A9ment_Persan_1030_fol._305v-306r_Muhammad_and_Ali_lead_destruction_of_Meccan_idols.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Unknown authorUnknown author",
+    "image_license": "Public domain",
+    "image_search": "Jabal Khandama Mecca mountain view"
+  },
+  {
+    "id": "al_abtah",
+    "name": "Al-Abtah (Al-Muhassab)",
+    "true_lat": 21.4227,
+    "true_lng": 39.8946,
+    "era": "12–13 Dhul Hijjah 10 AH (March 632 CE)",
+    "description": "Al-Abtah is a valley between Mecca and Mina where the Prophet camped during the closing days of the Farewell Pilgrimage, praying four of the day's prayers there before returning to the Ka'ba. Companions recorded that he chose the spot because it made departure easiest. Stopping here on the way back from Mina became an established, though not obligatory, practice for later pilgrims.",
+    "source_citation": "Narrations from Aisha and Ibn Abbas in Sahih al-Bukhari and Sahih Muslim, Books of Hajj.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Al-Abtah",
+    "coord_note": "Good confidence — matches the surveyed valley coordinates. Sits close to the existing Mina pin, which reflects the real geography of this stretch between Mecca and Mina.",
+    "region": "hijaz",
+    "image": null,
+    "image_credit": null,
+    "image_license": null,
+    "image_search": "Al-Abtah valley Mecca Mina"
+  },
+  {
+    "id": "awtas",
+    "name": "Awtas",
+    "true_lat": 21.433,
+    "true_lng": 40.35,
+    "era": "Shawwal 8 AH (630 CE), days after Hunayn",
+    "description": "After the Hawazin and Thaqif coalition broke at Hunayn, its surviving fighters under Malik ibn Awf regrouped in this valley. Muslim forces, including a detachment under Khalid ibn al-Walid, pursued and finished them off here, capturing large numbers of livestock and prisoners later distributed as spoils at nearby al-Ji'ranah. This action is usually treated as the closing phase of the Hunayn campaign.",
+    "source_citation": "Ibn Ishaq's Sirat Rasul Allah, preserved via Ibn Hisham; referenced alongside Hunayn in Qur'an 9:25.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Battle_of_Autas",
+    "coord_note": "Moderate confidence — matches the place-name coordinates given for Awtas.",
+    "region": "hijaz",
+    "image": null,
+    "image_credit": null,
+    "image_license": null,
+    "image_search": "Awtas valley Saudi Arabia Sarawat mountains"
+  },
+  {
+    "id": "wadi_al_qura",
+    "name": "Wadi al-Qura (Qurh)",
+    "true_lat": 26.617,
+    "true_lng": 37.917,
+    "era": "c. 6–7 AH; also crossed during the march to Tabuk, 9 AH",
+    "description": "Wadi al-Qura, the \"Valley of Villages,\" was a fertile, densely settled valley north of Medina on the route to Syria, home to Jewish agricultural communities. Following Khaybar, its communities came to terms similar to Khaybar and Fadak, both already familiar names in this pool. Its principal town, Qurh, later became a major waystation on the pilgrim and trade road, and the Prophet's army passed through the valley again on the march to Tabuk.",
+    "source_citation": "Ibn Hisham's Sirat Rasul Allah and al-Waqidi's Kitab al-Maghazi describe the expeditions; al-Baladhuri's Futuh al-Buldan discusses the valley's later administration.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Wadi_al-Qura",
+    "coord_note": "Moderate confidence — matches the coordinates for Qurh, the valley's identified ruin site, about 20km from the existing Al-Hijr pin (a genuinely different site and story).",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Al_Ula_%286748577917%29.jpg/3840px-Al_Ula_%286748577917%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Sammy Six",
+    "image_license": "CC BY 2.0",
+    "image_search": "Qurh archaeological site AlUla ruins"
+  },
+  {
+    "id": "masjid_al_namirah",
+    "name": "Masjid al-Namirah",
+    "true_lat": 21.3529556,
+    "true_lng": 39.9667528,
+    "era": "9 Dhul Hijjah 10 AH (632 CE)",
+    "description": "Masjid al-Namirah stands at the edge of the plain of Arafat and marks the traditional spot where the Prophet stopped and delivered the bulk of his Farewell Sermon before the Day of Arafah standing. It's a distinct, fixed teaching location rather than the open plain itself, and today it's one of the largest mosques in Mecca Province, drawing hundreds of thousands of worshippers each Hajj.",
+    "source_citation": "The Farewell Sermon and the stop before it are described in Ibn Hisham's Sirat Rasul Allah and in the long hadith of Jabir ibn Abdullah on the Prophet's Hajj, Sahih Muslim 1218a.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Masjid_al-Namirah",
+    "coord_note": "Good confidence for the modern mosque's coordinates; the current building is Abbasid-era and later, not an excavated 7th-century structure. Sits close to the existing Arafat pin, which reflects the real geography — Namirah is at Arafat's edge.",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Masjid_al-Namira.jpg/3840px-Masjid_al-Namira.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Ilhamnobi",
+    "image_license": "CC BY-SA 4.0",
+    "image_search": "Masjid Namirah Arafat Mecca"
+  },
+  {
+    "id": "wadi_muhassar",
+    "name": "Wadi Muhassar (Batn Muhassir)",
+    "true_lat": 21.4,
+    "true_lng": 39.915,
+    "era": "10 Dhul Hijjah 10 AH (632 CE)",
+    "description": "Wadi Muhassar is the short valley pilgrims cross between Muzdalifah and Mina. On the morning of the Farewell Pilgrimage, the Prophet is recorded to have urged his camel to a quicker pace crossing it, a practice pilgrims still imitate today. Classical exegetes also tie the valley to the earlier, pre-Islamic destruction of Abraha's army, but the Prophet's own recorded action here belongs to the Farewell Hajj.",
+    "source_citation": "Sahih Muslim 1218a (Book of Hajj, the long hadith of Jabir ibn Abdullah), which names Batn Muhassir directly.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Farewell_Pilgrimage",
+    "coord_note": "Approximate — interpolated between Muzdalifah and Mina based on the valley's described length and position, not an independently surveyed point.",
+    "region": "hijaz",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Maome.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_credit": "Unknown authorUnknown author",
+    "image_license": "Public domain",
+    "image_search": "Wadi Muhassar valley Mina Muzdalifah Hajj"
+  },
+  {
+    "id": "mawlid",
+    "name": "Traditional Birthplace (Bayt al-Mawlid)",
+    "true_lat": 21.425,
+    "true_lng": 39.83,
+    "era": "c. 570 CE",
+    "description": "This site in old Mecca is traditionally identified as the house where the Prophet was born, in the Year of the Elephant. In 1951, King Abd al-Aziz had a library built over the site after consulting religious scholars, rather than preserving it as a shrine; the Makkah al-Mukarramah Library stands there today.",
+    "source_citation": "Location and library history per standard modern accounts of Mecca's historic sites; the birth narrative itself follows Ibn Hisham's Sirat Rasul Allah.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Muhammad%27s_birthplace",
+    "coord_note": "Good confidence on the site's identification and coordinates. Sits close to several other Meccan-period entries in this pool, reflecting the real geography of the old city core.",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Site_of_the_birthplace_of_the_Prophet_Muhammad%2C_Mecca%2C_Saudi_Arabia.jpg/3840px-Site_of_the_birthplace_of_the_Prophet_Muhammad%2C_Mecca%2C_Saudi_Arabia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "Richard Mortel",
+    "image_license": "CC BY 2.0",
+    "image_search": "Makkah al-Mukarramah Library birthplace Prophet"
+  },
+  {
+    "id": "ghadir_khumm",
+    "name": "Ghadir Khumm",
+    "true_lat": 22.7,
+    "true_lng": 39.1333,
+    "era": "18 Dhul Hijjah 10 AH (632 CE)",
+    "description": "On the return from the Farewell Pilgrimage, at a pond near al-Juhfah where routes toward Medina, Egypt, and Iraq split, the Prophet stopped the traveling pilgrims, gathered them, and delivered a sermon. In it he took Ali ibn Abi Talib by the hand and said, \"Whoever I am his mawla, Ali is his mawla.\" Muslims have read that statement differently ever since: Shia tradition holds it designated Ali as the Prophet's successor, while Sunni tradition generally understands it as praise and an expression of closeness, without a claim to succession. Both readings agree on what was said; they differ on what it meant.",
+    "source_citation": "The hadith of the pond of Khumm is narrated through multiple chains, including in Sunni collections such as Sunan al-Tirmidhi; its historical and theological significance is read differently across Sunni and Shia scholarship, as described above.",
+    "wiki_link": "https://en.wikipedia.org/wiki/Ghadir_Khumm",
+    "coord_note": "Low confidence on the precise point — no source gives exact coordinates. Located here at the existing al-Juhfah pin's coordinates, since multiple sources place it \"near Juhfa\"; the two pins likely overlap, which is honest given the available sourcing rather than a fabricated distinct point.",
+    "region": "hijaz",
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/The_event_of_Ghadir.jpg/3840px-The_event_of_Ghadir.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_credit": "khamenei.ir",
+    "image_license": "CC BY 4.0",
+    "image_search": "Ghadir Khumm pond desert Arabia"
   }
 ]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sirah MapTap — Explore</title>
+
+  <!-- Leaflet: the map library. CSS first, then JS at the bottom. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Reuses the daily game's stylesheet on purpose: same tokens, same
+       .result-* classes, so a write-up looks identical whether you got
+       here by guessing correctly or by browsing. -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <div id="map" aria-label="Satellite map of every Sirah MapTap location"></div>
+
+  <header class="explore-head">
+    <a href="/" class="explore-back">← Back to today's game</a>
+    <h1 class="title">Explore all locations</h1>
+    <p class="hint">Tap any pin for its write-up. Nothing here is scored — this is a reference map, not the daily game.
+    </p>
+  </header>
+
+  <aside id="explore-detail" class="reveal" hidden>
+    <header class="reveal-head">
+      <button id="explore-close" class="ghost" type="button">Close</button>
+    </header>
+    <div id="explore-body" class="result"></div>
+  </aside>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Reference city labels, same as the daily game, so Explore reads as
+       the same world rather than a different app. -->
+  <script src="{{ url_for('static', filename='landmarks.js') }}"></script>
+  <script src="{{ url_for('static', filename='explore.js') }}"></script>
+</body>
+
+</html>

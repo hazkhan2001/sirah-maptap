@@ -752,3 +752,104 @@ body.is-revealed .leaflet-container .leaflet-interactive {
 @media (min-width: 641px) {
   .mobile-share-btn { display: none; }
 }
+
+
+/* ---------- province name, streak & explore mode ----------
+   Appended 2026-09-17: province name in the reveal write-ups, a local
+   streak tracker, and the /explore reference map. See game.js and app.py
+   for the logic; this just styles what they draw.
+*/
+
+.result-province {
+  margin: -0.6rem 0 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
+.streak-line {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ivory-dim);
+}
+
+.explore-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: var(--sand);
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 168, 90, 0.4);
+}
+
+.explore-link:hover {
+  border-bottom-color: var(--sand);
+}
+
+.explore-link--panel {
+  display: block;
+  margin-top: 0.9rem;
+  text-align: center;
+}
+
+.explore-head {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1000;
+  max-width: 24rem;
+  padding: 1.1rem 1.5rem 1.3rem;
+  background: var(--green);
+  border: 1px solid rgba(200, 168, 90, 0.45);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.55);
+}
+
+.explore-back {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: var(--ivory-dim);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.explore-back:hover {
+  color: var(--sand);
+}
+
+.explore-head .hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ivory-dim);
+}
+
+.explore-pin--beyond {
+  background: var(--clay);
+  box-shadow: 0 0 0 4px rgba(184, 84, 63, 0.45), 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* The write-up panel on /explore reuses .result's spacing, image and text
+   styling wholesale (see game.js/style.css above) but isn't a clickable
+   row, so the hover highlight and pointer cursor that make sense in the
+   daily game's list don't apply here. */
+#explore-body.result {
+  cursor: default;
+}
+
+#explore-body.result:hover {
+  background: none;
+}
+
+@media (max-width: 640px) {
+  .reveal.is-single .streak-line {
+    display: none;
+  }
+
+  .explore-head {
+    top: 0.6rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    max-width: none;
+    padding: 0.75rem 1rem 0.9rem;
+  }
+}

@@ -5,8 +5,14 @@ locations, one at a time, taps a satellite map of the Hijaz to guess where
 each happened, then sees the distance, the score, a photo and a sourced
 write-up for each.
 
-36 locations are in the pool. The day's 3 are seeded from the date, so every
-player worldwide gets the same 3 until midnight America/New_York.
+51 locations are in the pool (47 selectable as daily rounds). The day's 3 are
+seeded from the date, so every player worldwide gets the same 3 until
+midnight America/New_York.
+
+`/explore` is a separate, unscored reference map of all 36 locations, for
+studying before playing or for walking a class through the whole timeline.
+A local streak tracker (days played, current streak) lives in the browser
+and needs no account - see Known open questions for what's still [PLANNED].
 
 ## Run it
 
@@ -206,18 +212,25 @@ fetch_images.py      one-off script: pulls photos + license credits
 data/events.json     answer key, write-ups, citations, images (server-side only)
 data/hijaz_provinces.geojson   real province boundaries (fetched, not in git)
 templates/index.html page shell
+templates/explore.html reference map of every location (unscored)
 static/game.js       Leaflet map + game flow
+static/landmarks.js  permanent reference city labels
+static/explore.js    Explore-mode map (shares style.css with the game)
 static/style.css     styling
 ```
 
 ## API
 
 ```
-GET  /api/today    today's 3 prompts (names only - no coordinates)
-POST /api/guess    {lat, lng}; returns the reveal after the 3rd guess
-GET  /api/reveal   results, once all 3 guesses are in
-GET  /api/regions  province boundary GeoJSON (404 if not fetched)
-POST /api/reset    dev only, clears today's guesses
+GET  /api/today     today's 3 prompts (names only - no coordinates)
+POST /api/guess     {lat, lng}; returns the reveal after the 3rd guess
+GET  /api/reveal    results, once all 3 guesses are in
+GET  /api/regions   province boundary GeoJSON (404 if not fetched)
+POST /api/reset     dev only, clears today's guesses
+GET  /explore       the unscored reference map page
+GET  /api/locations every location WITH coordinates - intentionally not
+                    guarded like /api/today, since showing everything is
+                    the whole point of Explore, not a leak of the game
 ```
 
 ## Data record
@@ -241,10 +254,10 @@ POST /api/reset    dev only, clears today's guesses
 }
 ```
 
-`region` is `"hijaz"` or `"beyond"`. Nothing reads it yet. It exists so the
-handful of locations far outside the Hijaz (Jerusalem, Aksum, Mu'tah, Ayla,
-Najran, Bosra) can be filtered or scored differently later without
-re-authoring every write-up.
+`region` is `"hijaz"` or `"beyond"`. As of 2026-09-17 it drives the scoring
+cutoff (see below) as well as the pin color on `/explore` - the handful of
+locations far outside the Hijaz (Jerusalem, Aksum, Mu'tah, Ayla, Najran,
+Bosra) no longer need every write-up re-authored to be treated differently.
 
 ## Conventions worth keeping
 
@@ -267,10 +280,13 @@ re-authoring every write-up.
 
 ## Known open questions
 
-- **The 100 km cutoff.** Scoring is `100 - distance_km`, floored at 0. This
-  was chosen so every kilometre visibly matters at regional distances. It
-  gets harsh for remote locations, and for the six `"beyond"` locations
-  almost any reasonable guess scores 0. Under review.
+- **The 100 km cutoff - resolved 2026-09-17.** Score is now
+  `100 * (1 - distance_km / cutoff)`, floored at 0, where `cutoff` is 100 km
+  for the 30 Hijaz locations (unchanged - every kilometre still visibly
+  matters) and 300 km for the six `"beyond"` locations, so a guess that gets
+  the right country now scores partial credit instead of a guaranteed 0.
+  Percentage-of-cutoff rather than a flat subtraction, so every score still
+  lands in 0-100 regardless of which cutoff applied.
 - **Clustered pins.** Seven locations sit within about 10 km of Medina and
   five within about 12 km of Mecca. At the current scoring granularity some
   of these are hard to tell apart - Jannat al-Baqi' is 0.3 km from the Medina

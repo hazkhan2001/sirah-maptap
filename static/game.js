@@ -77,6 +77,7 @@ const el = {
   mobileShare: document.getElementById("mobile-share"),
   shareStatus: document.getElementById("share-status"),
   shareText: document.getElementById("share-text"),
+  streakLine: document.getElementById("streak-line"),
 };
 
 // One source of truth for "are we on a phone?", matching the CSS breakpoint.
@@ -225,6 +226,7 @@ function emphasizeRegion(feature) {
 
 function showReveal(reveal) {
   latestReveal = reveal;   // the share buttons read this
+  renderStreak(recordDayPlayed(reveal.day));
   el.panel.hidden = true;
   document.body.classList.add("is-revealed"); // swaps the reticle cursor for a grab hand
   el.revealDay.textContent = reveal.day;
@@ -242,9 +244,15 @@ function showReveal(reveal) {
     const region = findRegion(r.answer.lat, r.answer.lng);
     if (region) drawRegionOutline(region); // dim outline, drawn for all three rounds up front
 
+    // shapeName comes from the same geoBoundaries file that already drew
+    // the outline above (see README) - this just reads one property deeper.
+    // Locations outside Saudi Arabia have no polygon to match, so this
+    // stays null there, same as region itself.
+    const provinceName = region ? region.properties.shapeName : null;
+
     // Popups (not just tooltips) carry the write-up, so clicking a pin
     // itself works even without using the side panel.
-    const popupHtml = `<strong>${r.name}</strong><br>${r.era}<br>${r.distance_km} km away &middot; ${r.score} pts`;
+    const popupHtml = `<strong>${r.name}</strong><br>${provinceName ? provinceName + "<br>" : ""}${r.era}<br>${r.distance_km} km away &middot; ${r.score} pts`;
 
     // The answer sits above the guess when they overlap (zIndexOffset), and
     // each carries a permanent label so you never have to guess which is which.
@@ -298,6 +306,7 @@ function showReveal(reveal) {
         <span class="result-score"></span>
       </div>
       <p class="result-meta"></p>
+      <p class="result-province" hidden></p>
       <figure class="result-figure" hidden>
         <img class="result-img" alt="" loading="lazy">
         <figcaption class="result-caption"></figcaption>
@@ -309,6 +318,11 @@ function showReveal(reveal) {
     sec.querySelector(".result-name").textContent = `Round ${r.round}: ${r.name}`;
     sec.querySelector(".result-score").textContent = r.score;
     sec.querySelector(".result-meta").textContent = `${r.era}. You were ${r.distance_km} km away.`;
+    if (provinceName) {
+      const provinceEl = sec.querySelector(".result-province");
+      provinceEl.textContent = provinceName;
+      provinceEl.hidden = false;
+    }
     sec.querySelector(".result-desc").textContent = r.description;
     sec.querySelector(".result-source").textContent = `Sources: ${r.source_citation}`;
     sec.querySelector(".result-link").href = r.wiki_link;
@@ -350,6 +364,67 @@ function showReveal(reveal) {
   } else {
     el.reveal.hidden = false;
   }
+}
+
+// ---------- streak tracking ----------
+//
+// Local only, in the browser's own storage, not something the server
+// tracks. That's deliberate while accounts are still [PLANNED]: a
+// Wordle-style "have you played today" streak doesn't need a login, and
+// building it against localStorage now means it keeps working unchanged
+// once real accounts land later.
+
+const STREAK_KEY = "sirah-streak";
+
+function loadStreak() {
+  try {
+    const raw = localStorage.getItem(STREAK_KEY);
+    return raw ? JSON.parse(raw) : { lastDay: null, current: 0, best: 0, played: 0 };
+  } catch {
+    // Private browsing, or storage disabled: fall back to a fresh streak
+    // rather than letting this break the reveal screen.
+    return { lastDay: null, current: 0, best: 0, played: 0 };
+  }
+}
+
+function saveStreak(streak) {
+  try {
+    localStorage.setItem(STREAK_KEY, JSON.stringify(streak));
+  } catch {
+    /* nothing we can do if storage is unavailable; the rest of the page still works */
+  }
+}
+
+// Whole calendar days between two "YYYY-MM-DD" strings, read as UTC dates
+// rather than local timestamps - the same trick formatDay() uses below -
+// so this can't be thrown off by which time zone the player is in.
+function daysBetween(isoA, isoB) {
+  const toUTCDays = (iso) => {
+    const [y, m, d] = iso.split("-").map(Number);
+    return Date.UTC(y, m - 1, d) / 86400000;
+  };
+  return Math.round(toUTCDays(isoB) - toUTCDays(isoA));
+}
+
+function recordDayPlayed(day) {
+  const streak = loadStreak();
+  if (streak.lastDay === day) return streak; // already recorded (e.g. a page reload)
+
+  const gap = streak.lastDay ? daysBetween(streak.lastDay, day) : null;
+  streak.current = gap === 1 ? streak.current + 1 : 1; // consecutive day, or a fresh start
+  streak.best = Math.max(streak.best, streak.current);
+  streak.played += 1;
+  streak.lastDay = day;
+
+  saveStreak(streak);
+  return streak;
+}
+
+function renderStreak(streak) {
+  if (!el.streakLine) return;
+  const days = streak.played === 1 ? "day" : "days";
+  const streakPart = streak.current >= 2 ? `🔥 ${streak.current}-day streak · ` : "";
+  el.streakLine.textContent = `${streakPart}${streak.played} ${days} played`;
 }
 
 // ---------- phone detail view ----------
